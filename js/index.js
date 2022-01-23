@@ -4,4 +4,4 @@ if (!document.cookie) {
 }
 
 document.getElementById("h1").innerText =
-  "The ID is " + document.cookie.replace("userid", "");
+  "The ID is " + document.cookie.replace("userid=", "");
