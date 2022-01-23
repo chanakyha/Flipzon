@@ -1,7 +1,3 @@
-$.getJSON("../json/customer-details.json", function (data) {
-  console.log(data);
-});
-
 function ValidateEmail(input) {
   var validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -47,14 +43,43 @@ document.getElementById("submit").onclick = function () {
       "danger"
     );
     $("#email-error").toast("show");
-  } else {
+  } else if (password.value === "") {
     addToast(
-      "pass-error",
-      "Password is InCorrect",
-      "The Pass Address entered is invalid",
+      "password-blank",
+      "The Password Filed is Blank",
+      "The Password field is Required!",
       "danger"
     );
-    $("#email-error").toast("hide");
-    $("#pass-error").toast("show");
+    $("#password-blank").toast("show");
+  } else {
+    $.getJSON("../json/customer-details.json", function (data) {
+      let idExists = false;
+      for (var i = 0; i < data.length; i++) {
+        if (emailAddress.value === data[i].email) {
+          idExists = true;
+          if (password.value === data[i].password) {
+            alert("You are logged in");
+          } else {
+            addToast(
+              "pass-error",
+              "Password is InCorrect",
+              "The Pass Address entered is invalid",
+              "danger"
+            );
+            $("#pass-error").toast("show");
+          }
+        }
+      }
+
+      if (!idExists) {
+        addToast(
+          "user-not-found",
+          "User Not found",
+          "The Entered email address is not registered with FlipZon, Please register it",
+          "danger"
+        );
+        $("#user-not-found").toast("show");
+      }
+    });
   }
 };

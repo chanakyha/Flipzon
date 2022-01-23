@@ -3,8 +3,8 @@
         "id" : 1,
         "name" : "Chanakyha",
         "age" : 18,
-        "mobile-number" : "7550148119",
-        "email-address" : "vetrichanakyha2003@gmail.com",
+        "number" : "7550148119",
+        "email" : "vetrichanakyha2003@gmail.com",
         "password" : "chan2109",
         "prime" : false
     }
