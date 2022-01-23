@@ -1,3 +1,7 @@
+$.getJSON("../json/customer-details.json", function (data) {
+  console.log(data);
+});
+
 function ValidateEmail(input) {
   var validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
