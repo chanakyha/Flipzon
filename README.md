@@ -1,5 +1,7 @@
 # Flipzon
 
+Live Preview of the Site: https://chanakyha.github.io/Flipzon
+
 ## Pages List
 
 - Home Page
@@ -16,7 +18,7 @@
 
 - Customer Details
 
-  1. Id 
+  1. Id
   2. Name
   3. Age
   4. Mobile Number
@@ -31,6 +33,7 @@
   3. Mobile Model
   4. Product Image
   5. Specs
+
      - Display
      - Processor
      - Front Camera
@@ -43,12 +46,12 @@
      - Dual Sim
      - Refresh Rate
 
-  5. MRP Price
-  6. Offer Percentage
+  6. MRP Price
+  7. Offer Percentage
 
 - Order Details
 
-  1. Id 
+  1. Id
   2. Ordered by (id of that customer)
   3. Product Ordered
   4. Delivery Date
@@ -61,5 +64,3 @@
   3. Coupon Desc
   4. Coupon Tag
   5. Price Reduction Per(%)
-
-  
