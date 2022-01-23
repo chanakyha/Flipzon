@@ -1,4 +1,6 @@
 // Checking wether the user id is saved in cookies i.e it is checking is the logined earlier
 if (!document.cookie) {
-  window.location.href = "./pages/login.html";
+  location.href = "./pages/login.html";
 }
+
+document.getElementById("h1").innerText = "The ID is " + document.cookie;

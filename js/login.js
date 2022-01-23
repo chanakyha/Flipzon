@@ -58,7 +58,14 @@ document.getElementById("submit").onclick = function () {
         if (emailAddress.value === data[i].email) {
           idExists = true;
           if (password.value === data[i].password) {
-            alert("You are logged in");
+            console.log(data[i].name + " is Logged in");
+            document.cookie =
+              "userid=" +
+              data[i].id +
+              "; expires=" +
+              new Date("2022-12-31") +
+              " ;path=/";
+            location.href = "../index.html";
           } else {
             addToast(
               "pass-error",
