@@ -12,7 +12,7 @@ function addToast(id, title, message, bg) {
   const toastHtml =
     `<div class="toast" id="` +
     id +
-    `" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+    `" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
     <div class="toast-header text-light bg-` +
     bg +
     `">
