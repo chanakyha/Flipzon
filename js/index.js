@@ -3,4 +3,5 @@ if (!document.cookie) {
   location.href = "./pages/login.html";
 }
 
-document.getElementById("h1").innerText = "The ID is " + document.cookie;
+document.getElementById("h1").innerText =
+  "The ID is " + document.cookie.replace("userid", "");
