@@ -69,8 +69,8 @@ document.getElementById("submit").onclick = function () {
           } else {
             addToast(
               "pass-error",
-              "Password is InCorrect",
-              "The Pass Address entered is invalid",
+              "Invalid Password",
+              "The Password you have entered is incorrect",
               "danger"
             );
             $("#pass-error").toast("show");
