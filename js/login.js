@@ -1,3 +1,14 @@
+const fs = require("fs");
+
+fs.readFile("../json/customer-details.json", "utf-8", (err, custDetails) => {
+  if (err) {
+    console.log(err);
+  } else {
+    const data = JSON.parse(custDetails);
+    console.log(data);
+  }
+});
+
 function ValidateEmail(input) {
   var validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
