@@ -1,6 +1,6 @@
 # Flipzon
 
-Live Preview of the Site: https://chanakyha.github.io/Flipzon
+Live Preview of the Site: https://project-flipzon.chanakyha-coder.xyz/
 
 ## Pages List
 
