@@ -13,6 +13,7 @@ Live Preview of the Site: https://project-flipzon.chanakyha-coder.xyz/
 - Each Mobile Specs Pages
 - Cart Page
 - Payment Method - D-CARD\C-CARD\UPI\GPAY
+- About us
 
 ## Json Files
 
@@ -64,3 +65,14 @@ Live Preview of the Site: https://project-flipzon.chanakyha-coder.xyz/
   3. Coupon Desc
   4. Coupon Tag
   5. Price Reduction Per(%)
+
+## Team Members - Pages
+
+| S.No | Name             | Pages                                |
+| ---- | ---------------- | ------------------------------------ |
+| 1    | Chanakyha        | ["Create Account/Login Page","Cart"] |
+| 2    | Atharva          | ["Account Details"]                  |
+| 3    | Rashwanth        | ["Home Page","Payment Method"]       |
+| 4    | Jyothi Sai Kiran | ["Each Mobile Page","About Us"]      |
+
+**Note:** All Integrate the json files using JQuery, which is very simple to load or write Json Files 
