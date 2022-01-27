@@ -7,5 +7,14 @@
         "email" : "vetrichanakyha2003@gmail.com",
         "password" : "chan2109",
         "prime" : false
+    },
+    {
+        "id" : 2,
+        "name" : "Atharva Patil",
+        "age" : 18,
+        "number" : "999999999",
+        "email" : "atharva.p@gmail.com",
+        "password" : "atharva",
+        "prime" : true
     }
 ]
