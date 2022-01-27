@@ -90,3 +90,7 @@ document.getElementById("submit").onclick = function () {
     });
   }
 };
+
+document.getElementById("signup").onclick = function () {
+  location.href = "../pages/signup.html";
+};
