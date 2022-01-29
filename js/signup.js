@@ -28,66 +28,47 @@ function addToast(id, title, message, bg) {
       </div>
     </div>`;
 
-  document.getElementById("error-toast-container").innerHTML += toastHtml;
+  document.getElementById("error-toast-container").innerHTML = toastHtml;
 }
 
 document.getElementById("submit").onclick = function () {
+  let name = document.getElementById("name");
+  let age = document.getElementById("age");
+  let mobile = document.getElementById("mobile");
   let emailAddress = document.getElementById("email");
   let password = document.getElementById("password");
+  let rePass = document.getElementById("re-password");
 
-  if (!ValidateEmail(emailAddress)) {
+  let blanksFileds = "";
+  let errors = "";
+
+  if (name.value == "") {
+    blanksFileds += "<p>The Name field is required!</p>";
+  }
+  if (age.value == "") {
+    blanksFileds += "<p>The Age field is required!</p>";
+  }
+  if (mobile.value == "") {
+    blanksFileds += "<p>The Mobile Number field is required!</p>";
+  }
+  if (emailAddress.value == "") {
+    blanksFileds += "<p>The Email Address field is required!</p>";
+  }
+  if (password.value == "") {
+    blanksFileds += "<p>The Password field is required!</p>";
+  }
+  if (rePass.value == "") {
+    blanksFileds += "<p>The ReEnter Password field is required!</p>";
+  }
+
+  if (blanksFileds != "") {
     addToast(
-      "email-error",
-      "Email Address Invalid!",
-      "The Email Address entered is invalid",
+      "blank-fields",
+      "Please fill these Blank fields",
+      "<strong>" + blanksFileds + "</strong>",
       "danger"
     );
-    $("#email-error").toast("show");
-  } else if (password.value === "") {
-    addToast(
-      "password-blank",
-      "The Password Filed is Blank",
-      "The Password field is Required!",
-      "danger"
-    );
-    $("#password-blank").toast("show");
-  } else {
-    $.getJSON("../json/customer-details.json", function (data) {
-      let idExists = false;
-      for (var i = 0; i < data.length; i++) {
-        if (emailAddress.value === data[i].email) {
-          idExists = true;
-          if (password.value === data[i].password) {
-            console.log(data[i].name + " is Logged in");
-            document.cookie =
-              "userid=" +
-              data[i].id +
-              "; expires=" +
-              new Date("2022-12-31") +
-              " ;path=/";
-            location.href = "../index.html";
-          } else {
-            addToast(
-              "pass-error",
-              "Invalid Password",
-              "The Password you have entered is incorrect",
-              "danger"
-            );
-            $("#pass-error").toast("show");
-          }
-        }
-      }
-
-      if (!idExists) {
-        addToast(
-          "user-not-found",
-          "User Not found",
-          "The Entered email address is not registered with FlipZon, Please register it",
-          "danger"
-        );
-        $("#user-not-found").toast("show");
-      }
-    });
+    $("#blank-fields").toast("show");
   }
 };
 
