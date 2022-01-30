@@ -11,9 +11,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 /* navbar CSS */
-/* css for search bar */
-
-/* rest of nav bar */
 header a {
   text-decoration: none;
 }
@@ -56,7 +53,7 @@ ul li {
 }
 
 ul li:hover {
-  transform: scale(1.3);
+  transform: scale(1.2);
   transition: 0.3s;
 }
 ul li:hover a {
@@ -153,4 +150,8 @@ ul li:hover a {
   #hamburger-icon {
     display: block;
   }
+}
+.avatar {
+  border-radius: 50%;
+  border: 1px solid white;
 }
