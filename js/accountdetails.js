@@ -1,1 +1,3 @@
-document.getElementById("h1").innerText = "hello";
+function toggleMobileMenu(menu) {
+  menu.classList.toggle("open");
+}
