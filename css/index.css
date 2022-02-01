@@ -64,15 +64,10 @@ ul li:hover a {
   border: 1px solid white;
 }
 
-#cart,
 #signout,
 #account {
   border-radius: 5px;
   padding: 5px 8px;
-}
-
-#cart {
-  border: 1px solid rgb(3, 195, 3);
 }
 
 #signout {
@@ -86,9 +81,6 @@ ul li:hover a {
   color: red;
 }
 
-#cart a {
-  color: rgb(3, 195, 3);
-}
 #account a {
   color: #92badd;
 }
@@ -163,7 +155,7 @@ ul li:hover a {
   align-items: center;
   padding: 8px 12px;
   border-radius: 18px;
-  width: 55vw;
+  width: 45rem;
   margin: 0px 10px;
 }
 .searchbar_container > input {
@@ -171,5 +163,5 @@ ul li:hover a {
   background-color: transparent;
   border: 0;
   margin: 0px 10px;
-  width: 50vw;
+  width: 40rem;
 }
