@@ -33,7 +33,11 @@ header {
 #brand a {
   color: #09c372;
 }
-
+nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
 ul {
   padding: 0 !important;
   list-style: none;
@@ -52,10 +56,6 @@ ul li {
   margin-left: 10px;
 }
 
-ul li:hover {
-  transform: scale(1.2);
-  transition: 0.3s;
-}
 ul li:hover a {
   color: #92badd;
 }
@@ -64,15 +64,11 @@ ul li:hover a {
   border: 1px solid white;
 }
 
-#cart,
 #signout,
 #account {
   border-radius: 5px;
   padding: 5px 8px;
-}
-
-#cart {
-  border: 1px solid rgb(3, 195, 3);
+  cursor: pointer;
 }
 
 #signout {
@@ -86,9 +82,6 @@ ul li:hover a {
   color: red;
 }
 
-#cart a {
-  color: rgb(3, 195, 3);
-}
 #account a {
   color: #92badd;
 }
@@ -154,4 +147,26 @@ ul li:hover a {
   #hamburger-icon {
     display: block;
   }
+}
+
+.searchbar_container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 18px;
+  width: 40em;
+  margin: 0px 10px;
+}
+
+.searchbar_container:focus-within {
+  border: 4px solid var(--bs-success);
+}
+.searchbar_container > input {
+  outline: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0px 10px;
+  width: 40rem;
 }
