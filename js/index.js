@@ -21,3 +21,8 @@ if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "none");
   $(".signinbtn").css("display", "block");
 }
+
+document.getElementById("signout").onclick = function () {
+  document.cookie = "userid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  location.href = "../index.html";
+};
