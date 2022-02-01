@@ -158,6 +158,10 @@ ul li:hover a {
   width: 40em;
   margin: 0px 10px;
 }
+
+.searchbar_container:focus-within {
+  border: 4px solid var(--bs-success);
+}
 .searchbar_container > input {
   outline: none;
   background-color: transparent;
