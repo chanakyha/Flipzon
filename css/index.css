@@ -68,6 +68,7 @@ ul li:hover a {
 #account {
   border-radius: 5px;
   padding: 5px 8px;
+  cursor: pointer;
 }
 
 #signout {
