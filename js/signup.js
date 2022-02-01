@@ -40,7 +40,6 @@ document.getElementById("submit").onclick = function () {
   let rePass = document.getElementById("re-password");
 
   let blanksFileds = "";
-  let errors = "";
 
   if (name.value == "") {
     blanksFileds += "<p>The Name field is required!</p>";
@@ -69,6 +68,28 @@ document.getElementById("submit").onclick = function () {
       "danger"
     );
     $("#blank-fields").toast("show");
+  } else {
+    let errors = "";
+    if (!ValidateEmail(emailAddress)) {
+      errors += "<p>The Email You have Entered in not in correct format</p>";
+    }
+    if (age.value < 18) {
+      errors +=
+        "<p>You must be atlease 18 years old to create an account with FlipZon</p>";
+    }
+    if (mobile.value.length != 10) {
+      errors += "<p>The Mobile Number you have entered is Invalid</p>";
+    }
+
+    if (errors != "") {
+      addToast(
+        "error-fields",
+        "Please Rectify the below errors",
+        "<strong>" + errors + "</strong>",
+        "danger"
+      );
+      $("#error-fields").toast("show");
+    }
   }
 };
 
