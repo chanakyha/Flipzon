@@ -18,9 +18,9 @@ header a {
 header {
   padding: 0 20px;
   background-color: #1d1f1d;
-  height: 50px;
+  height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 #brand {
@@ -33,7 +33,11 @@ header {
 #brand a {
   color: #09c372;
 }
-
+nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
 ul {
   padding: 0 !important;
   list-style: none;
@@ -52,10 +56,6 @@ ul li {
   margin-left: 10px;
 }
 
-ul li:hover {
-  transform: scale(1.2);
-  transition: 0.3s;
-}
 ul li:hover a {
   color: #92badd;
 }
@@ -154,4 +154,22 @@ ul li:hover a {
   #hamburger-icon {
     display: block;
   }
+}
+
+.searchbar_container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 18px;
+  width: 55vw;
+  margin: 0px 10px;
+}
+.searchbar_container > input {
+  outline: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0px 10px;
+  width: 50vw;
 }
