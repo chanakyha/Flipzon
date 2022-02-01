@@ -64,7 +64,7 @@ h2 {
   border-radius: 0 0 10px 10px;
   justify-content: space-between;
 }
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   #formfooter {
     background-color: #f6f6f6;
     border-top: 1px solid #dce8f1;
@@ -78,7 +78,7 @@ h2 {
     justify-content: center;
     align-items: center;
   }
-}
+} */
 
 #formFooter > * {
   background-color: #fff;
