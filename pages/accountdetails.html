@@ -19,21 +19,35 @@
     <!-- for navbar -->
     <header>
         <!-- for desktop view -->
-        <div id="brand"><a href="/">Flipzone icon</a></div>
+
         <nav>
+            <div id="brand"><a href="/">FLIPZON</a></div>
             <ul>
                 <!-- search bar li -->
+
                 <li>
-                    <input type="text" placeholder="Search..">
+                    <div class="searchbar_container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..">
+                    </div>
                 </li>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">About</a></li>
-                <li id="cart"><a href="#">Cart</a></li>
-                <li id="account"><a href="./accountdetails.html">Account</a></li>
-                <li id="signout"><a href="#">Signout</a></li>
-                <li id="avatar"> <a href="#"><img class="avatar" src="../img/img_avatar.png" width="35rem"
-                            alt="avatar"></a> </li>
+                <li id="cart" class="accountdetails"><button type="button" class="btn btn-success position-relative">
+                        <i class="fas fa-cart-plus"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cart-items">err</span>
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button></li>
+                <li class="accountdetails" id="account"><a href="./pages/accountdetails.html">Account</a></li>
+                <li class="accountdetails" id="signout"><a href="#">Signout</a></li>
+                <li class="accountdetails" id="avatar"> <a href="#"><img class="avatar" src="../img/img_avatar.png"
+                            width="35rem" alt="avatar"></a>
+                </li>
+                <li class="signinbtn"><a class="btn btn-secondary" href="./login.html">SignIn</a></li>
+
             </ul>
         </nav>
         <!-- for mobile view -->
@@ -53,9 +67,7 @@
     </header>
     <!-- main -->
     <br>
-    <div>
 
-    </div>
 
 
     <!-- Booststrap Js -->
