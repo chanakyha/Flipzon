@@ -8,6 +8,20 @@ function ValidateEmail(input) {
   }
 }
 
+function sendmail(to, subject, body) {
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "chanakyha.coder@gmail.com",
+    Password: "wmhnyccipclicdxr",
+    To: to,
+    From: "admin@FlipZon.com",
+    Subject: subject,
+    Body: body,
+  }).then(function (message) {
+    console.log(message);
+  });
+}
+
 function addToast(id, title, message, bg) {
   const toastHtml =
     `<div class="toast" id="` +
@@ -80,6 +94,9 @@ document.getElementById("submit").onclick = function () {
     if (mobile.value.length != 10) {
       errors += "<p>The Mobile Number you have entered is Invalid</p>";
     }
+    if (password.value != rePass.value) {
+      errors += "<p>The Password is not matched!</p>";
+    }
 
     if (errors != "") {
       addToast(
@@ -89,6 +106,15 @@ document.getElementById("submit").onclick = function () {
         "danger"
       );
       $("#error-fields").toast("show");
+    } else {
+      otp_gen = Math.floor(Math.random() * (999999 - 111111 + 1)) + 111111;
+      console.log(otp_gen);
+      sendmail(
+        emailAddress.value,
+        "FlipZon: OTP Verification Process",
+        "Your One Time Verification Pin for registering FlipZon is " + otp_gen
+      );
+      mail_otp = prompt("Enter the Otp sent to your mail");
     }
   }
 };
