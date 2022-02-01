@@ -5,7 +5,7 @@ function toggleMobileMenu(menu) {
 
 document.getElementById("h1").innerText =
   "The ID is " + document.cookie.replace("userid=", "");
-
+//for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
   $(".signinbtn").css("display", "none");
