@@ -14,8 +14,43 @@
 </head>
 
 <body>
-
-
+    <!-- for navbar -->
+    <header>
+        <!-- for desktop view -->
+        <div id="brand"><a href="/">Flipzone icon</a></div>
+        <nav>
+            <ul>
+                <!-- search bar li -->
+                <li>
+                    <input type="text" placeholder="Search..">
+                </li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li id="cart"><a href="#">Cart</a></li>
+                <li id="account"><a href="./pages/accountdetails.html">Account</a></li>
+                <li id="signout"><a href="#">Signout</a></li>
+                <li id="avatar"> <a href="#"><img class="avatar" src="../img/img_avatar.png" width="35rem"
+                            alt="avatar"></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- for mobile view -->
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li id="cart"><a href="#">Cart</a></li>
+                <li id="account"><a href="#">Account</a></li>
+                <li id="signout"><a href="#">Signout</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- main  -->
     <h1 id="h1">This is the Main Page</h1>
 
     <!-- Booststrap Js -->
