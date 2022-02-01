@@ -6,11 +6,17 @@ function toggleMobileMenu(menu) {
 document.getElementById("h1").innerText =
   "The ID is " + document.cookie.replace("userid=", "");
 
-console.log(document.getElementsByName("accountdetails"));
-
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
   $(".signinbtn").css("display", "none");
+
+  $.getJSON("./json/customer-details.json", function (data) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].id.toString() === document.cookie.replace("userid=", "")) {
+        document.getElementById("cart-items").innerText = data[i].cart.length;
+      }
+    }
+  });
 } else {
   $(".accountdetails").css("display", "none");
   $(".signinbtn").css("display", "block");

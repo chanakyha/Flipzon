@@ -1,20 +1,24 @@
 [
     {
         "id" : 1,
+        "avatar": "",
         "name" : "Chanakyha",
         "age" : 18,
         "number" : "7550148119",
         "email" : "vetrichanakyha2003@gmail.com",
         "password" : "chan2109",
+        "cart": [],
         "prime" : false
     },
     {
         "id" : 2,
+        "avatar": "",
         "name" : "Atharva Patil",
         "age" : 18,
         "number" : "999999999",
         "email" : "atharva.p@gmail.com",
         "password" : "atharva",
+        "cart": [],
         "prime" : true
     }
 ]
