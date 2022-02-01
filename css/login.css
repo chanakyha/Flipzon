@@ -59,26 +59,27 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
-  justify-content: space-between;
 }
-/* @media only screen and (max-width: 600px) {
-  #formfooter {
+@media (max-width: 600px) {
+  #formFooter {
     background-color: #f6f6f6;
     border-top: 1px solid #dce8f1;
     padding: 25px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
-    justify-content: center;
-    align-items: center;
   }
-} */
+}
 
 #formFooter > * {
   background-color: #fff;
