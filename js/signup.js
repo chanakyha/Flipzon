@@ -109,12 +109,15 @@ document.getElementById("submit").onclick = function () {
     } else {
       otp_gen = Math.floor(Math.random() * (999999 - 111111 + 1)) + 111111;
       console.log(otp_gen);
-      sendmail(
-        emailAddress.value,
-        "FlipZon: OTP Verification Process",
-        "Your One Time Verification Pin for registering FlipZon is " + otp_gen
-      );
-      mail_otp = prompt("Enter the Otp sent to your mail");
+      // sendmail(
+      //   emailAddress.value,
+      //   "FlipZon: OTP Verification Process",
+      //   "Your One Time Verification Pin for registering FlipZon is " + otp_gen
+      // );
+      mail_otp = prompt("Enter the Otp that is sent to your mail");
+      while (otp_gen != mail_otp) {
+        mail_otp = prompt("Otp is Invalid, Please try again");
+      }
     }
   }
 };
