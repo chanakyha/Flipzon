@@ -115,8 +115,10 @@ document.getElementById("submit").onclick = function () {
       //   "Your One Time Verification Pin for registering FlipZon is " + otp_gen
       // );
       mail_otp = prompt("Enter the Otp that is sent to your mail");
-      while (otp_gen != mail_otp) {
+      while (mail_otp != null && otp_gen != mail_otp) {
         mail_otp = prompt("Otp is Invalid, Please try again");
+      }
+      if (mail != null) {
       }
     }
   }
