@@ -170,3 +170,30 @@ ul li:hover a {
   margin: 0px 10px;
   width: 40rem;
 }
+/* css for account nav buttons */
+.acc-btn-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.acc-button {
+  padding: 1rem;
+  border: 0.2rem solid #92badd;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.acc-button:hover {
+  text-shadow: 2.3px 2.3px 20px #4c769e;
+  box-shadow: 0 0 20px 1px rgb(146, 186, 221, 0.7);
+}
+/* media rule for mobile viewing  */
+@media (max-width: 600px) {
+  .acc-btn-container {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
