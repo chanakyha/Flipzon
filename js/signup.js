@@ -118,7 +118,19 @@ document.getElementById("submit").onclick = function () {
       while (mail_otp != null && otp_gen != mail_otp) {
         mail_otp = prompt("Otp is Invalid, Please try again");
       }
-      if (mail != null) {
+      if (mail != null && mail_otp === otp_gen) {
+        addToast(
+          "success-reg",
+          "Success",
+          "Thank you for registering with FlipZon, After 5sec the Page will refresh and will redirect to the login page",
+          "success"
+        );
+
+        $("#success-reg").toast("show");
+
+        setTimeout(function () {
+          location.href = "/login.html";
+        }, 5000);
       }
     }
   }

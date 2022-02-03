@@ -3,6 +3,10 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+const cookies = document.cookie.split("=");
+
+console.log(cookies);
+
 document.getElementById("h1").innerText =
   "The ID is " + document.cookie.replace("userid=", "");
 //for user authentication
