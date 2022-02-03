@@ -3,7 +3,7 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
-const cookies = document.cookie.split("=");
+const cookies = document.cookie.split(";");
 
 console.log(cookies);
 
