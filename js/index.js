@@ -13,11 +13,13 @@ if (document.cookie.includes("userid")) {
   const cookies = document.cookie.split("; ");
 
   $.getJSON("../json/customer-details.json", function (data) {
-    if (!document.cookie.includes("G_ENABLED_IDPS")) {
-      cookieUserId = cookies[0];
-    } else {
+    if (document.cookie.includes("G_ENABLED_IDPS")) {
       cookieUserId = cookies[1];
+    } else {
+      cookieUserId = cookies[0];
     }
+
+    console.log(cookieUserId);
     for (let i = 0; i < data.length; i++) {
       if (data[i].id.toString() === cookieUserId.replace("userid=", "")) {
         document.getElementById("cart-items").innerText = data[i].cart.length;
