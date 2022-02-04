@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "mobile-name": "Realme x3 Superzoom",
+        "mobile-brand": "Realme",
+        "product-img": "x3-superzoom.jpg",
+        "specs": {
+            "display": "",
+            "processor": "",
+            "front-camera": "",
+            "rear-camera": "",
+            "ram": "",
+            "storage": "",
+            "battery-capacity": "",
+            "os": "",
+            "expandable-storage": false,
+            "dual-sim": true,
+            "refresh-rate": "120hz"
+
+        },
+        "mrp-price": 29000,
+        "offer-percentage": 12
+    },
+    {
+        "id": 1,
+        "mobile-name": "Iphone 13 pro max",
+        "mobile-brand": "Apple",
+        "product-img": "iphone.png",
+        "specs": {
+            "display": "",
+            "processor": "",
+            "front-camera": "",
+            "rear-camera": "",
+            "ram": "",
+            "storage": "",
+            "battery-capacity": "",
+            "os": "",
+            "expandable-storage": false,
+            "dual-sim": true,
+            "refresh-rate": "120hz"
+
+        },
+        "mrp-price": 129000,
+        "offer-percentage": 12
+    }
+
+]
