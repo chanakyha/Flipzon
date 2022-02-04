@@ -95,7 +95,12 @@ document.getElementById("submit").onclick = function () {
       for (let i = 0; i < customerDetails.length; i++) {
         if (customerDetails[i].email == emailAddress.value) {
           userExists = true;
-          document.cookie = "userid=" + customerDetails[i].id + "; path='/'";
+          document.cookie =
+            "userid=" +
+            customerDetails[i].id +
+            "; expires=" +
+            new Date("2022-12-31") +
+            " ;path=/";
           location.href = "../index.html";
           break;
         }
