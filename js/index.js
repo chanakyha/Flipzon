@@ -13,7 +13,7 @@ if (document.cookie.includes("userid")) {
   const cookies = document.cookie.split("; ");
 
   $.getJSON("../json/customer-details.json", function (data) {
-    if (!document.cookie.includes("G_ENABLED_IDPS=google")) {
+    if (!document.cookie.includes("G_ENABLED_IDPS")) {
       cookieUserId = cookies[0];
     } else {
       cookieUserId = cookies[1];
