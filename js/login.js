@@ -8,30 +8,6 @@ function ValidateEmail(input) {
   }
 }
 
-const addCust = (
-  e_name,
-  e_photo,
-  e_age,
-  e_number,
-  e_email,
-  e_password,
-  e_prime
-) => {
-  customerDetails += [
-    {
-      id: customerDetails.length,
-      avatar: e_photo,
-      name: e_name,
-      age: e_age,
-      number: e_number,
-      email: e_email,
-      password: e_password,
-      cart: [],
-      prime: e_prime,
-    },
-  ];
-};
-
 function addToast(id, title, message, bg) {
   const toastHtml =
     `<div class="toast" id="` +

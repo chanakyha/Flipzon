@@ -8,6 +8,30 @@ function ValidateEmail(input) {
   }
 }
 
+const addCust = (
+  e_name,
+  e_photo,
+  e_age,
+  e_number,
+  e_email,
+  e_password,
+  e_prime
+) => {
+  customerDetails += [
+    {
+      id: customerDetails.length,
+      avatar: e_photo,
+      name: e_name,
+      age: e_age,
+      number: e_number,
+      email: e_email,
+      password: e_password,
+      cart: [],
+      prime: e_prime,
+    },
+  ];
+};
+
 function sendmail(to, subject, body) {
   Email.send({
     Host: "smtp.gmail.com",
@@ -98,6 +122,20 @@ document.getElementById("submit").onclick = function () {
       errors += "<p>The Password is not matched!</p>";
     }
 
+    custExists = false;
+
+    for (let i = 0; i < customerDetails.length; i++) {
+      if (customerDetails[i].email == emailAddress.value) {
+        custExists = true;
+        break;
+      }
+    }
+
+    if (custExists) {
+      errors =
+        "<p>The Email Address you have entered is already exists, please use the login page to login into FlipZon</p>";
+    }
+
     if (errors != "") {
       addToast(
         "error-fields",
@@ -107,31 +145,29 @@ document.getElementById("submit").onclick = function () {
       );
       $("#error-fields").toast("show");
     } else {
-      otp_gen = Math.floor(Math.random() * (999999 - 111111 + 1)) + 111111;
-      console.log(otp_gen);
-      // sendmail(
-      //   emailAddress.value,
-      //   "FlipZon: OTP Verification Process",
-      //   "Your One Time Verification Pin for registering FlipZon is " + otp_gen
-      // );
-      mail_otp = prompt("Enter the Otp that is sent to your mail");
-      while (mail_otp != null && otp_gen != mail_otp) {
-        mail_otp = prompt("Otp is Invalid, Please try again");
-      }
-      if (mail != null && mail_otp === otp_gen) {
-        addToast(
-          "success-reg",
-          "Success",
-          "Thank you for registering with FlipZon, After 5sec the Page will refresh and will redirect to the login page",
-          "success"
-        );
+      addToast(
+        "success-reg",
+        "Success",
+        "Thank you for registering with FlipZon, After 5sec the Page will refresh and will redirect to the login page",
+        "success"
+      );
 
-        $("#success-reg").toast("show");
+      $("#success-reg").toast("show");
 
-        setTimeout(function () {
-          location.href = "/login.html";
-        }, 5000);
-      }
+      addCust(
+        name.value,
+        "",
+        age.value,
+        mobile.value,
+        emailAddress.value,
+        password.value,
+        false
+      );
+
+      alert(
+        "Thank you for Registering with us & This Page will be redirected to login page to login"
+      );
+      location.href = "./login.html";
     }
   }
 };
