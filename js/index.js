@@ -10,11 +10,16 @@ if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
   $(".signinbtn").css("display", "none");
 
-  const cookies = document.cookie.split(";");
+  const cookies = document.cookie.split("; ");
 
   $.getJSON("../json/customer-details.json", function (data) {
+    if (!document.cookie.includes("G_ENABLED_IDPS=google")) {
+      cookieUserId = cookies[0];
+    } else {
+      cookieUserId = cookies[1];
+    }
     for (let i = 0; i < data.length; i++) {
-      if (data[i].id.toString() === cookies[-1].replace("userid=", "")) {
+      if (data[i].id.toString() === cookieUserId.replace("userid=", "")) {
         document.getElementById("cart-items").innerText = data[i].cart.length;
       }
     }
