@@ -12,19 +12,20 @@ if (document.cookie.includes("userid")) {
 
   const cookies = document.cookie.split("; ");
 
-  $.getJSON("../json/customer-details.json", function (data) {
-    if (document.cookie.includes("G_ENABLED_IDPS")) {
-      cookieUserId = cookies[1];
-    } else {
-      cookieUserId = cookies[0];
-    }
+  if (document.cookie.includes("G_ENABLED_IDPS")) {
+    cookieUserId = cookies[1];
+  } else {
+    cookieUserId = cookies[0];
+  }
 
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].id.toString() === cookieUserId.replace("userid=", "")) {
-        document.getElementById("cart-items").innerText = data[i].cart.length;
-      }
+  for (let i = 0; i < customerDetails.length; i++) {
+    if (
+      customerDetails[i].id.toString() === cookieUserId.replace("userid=", "")
+    ) {
+      document.getElementById("cart-items").innerText =
+        customerDetails[i].cart.length;
     }
-  });
+  }
 } else {
   $(".accountdetails").css("display", "none");
   $(".signinbtn").css("display", "block");
