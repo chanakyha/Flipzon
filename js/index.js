@@ -19,7 +19,6 @@ if (document.cookie.includes("userid")) {
       cookieUserId = cookies[0];
     }
 
-    console.log(cookieUserId);
     for (let i = 0; i < data.length; i++) {
       if (data[i].id.toString() === cookieUserId.replace("userid=", "")) {
         document.getElementById("cart-items").innerText = data[i].cart.length;
