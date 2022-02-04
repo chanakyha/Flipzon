@@ -8,6 +8,30 @@ function ValidateEmail(input) {
   }
 }
 
+const addCust = (
+  e_name,
+  e_photo,
+  e_age,
+  e_number,
+  e_email,
+  e_password,
+  e_prime
+) => {
+  customerDetails += [
+    {
+      id: customerDetails.length,
+      avatar: e_photo,
+      name: e_name,
+      age: e_age,
+      number: e_number,
+      email: e_email,
+      password: e_password,
+      cart: [],
+      prime: e_prime,
+    },
+  ];
+};
+
 function addToast(id, title, message, bg) {
   const toastHtml =
     `<div class="toast" id="` +
@@ -28,66 +52,64 @@ function addToast(id, title, message, bg) {
     </div>
   </div>`;
 
-  document.getElementById("error-toast-container").innerHTML += toastHtml;
+  document.getElementById("error-toast-container").innerHTML = toastHtml;
 }
 
 document.getElementById("submit").onclick = function () {
   let emailAddress = document.getElementById("email");
   let password = document.getElementById("password");
+  let emptyFileds = "";
 
-  if (!ValidateEmail(emailAddress)) {
+  if (emailAddress.value == "") {
+    emptyFileds += "<p>The Email Address field is required!</p>";
+  }
+  if (password.value == "") {
+    emptyFileds += "<p>The Password field is required!</p>";
+  }
+
+  if (emptyFileds != "") {
     addToast(
-      "email-error",
-      "Email Address Invalid!",
-      "The Email Address entered is invalid",
+      "empty-fields",
+      "The below mentioned fileds are required",
+      "<strong>" + emptyFileds + "</strong>",
       "danger"
     );
-    $("#email-error").toast("show");
-  } else if (password.value === "") {
-    addToast(
-      "password-blank",
-      "The Password Filed is Blank",
-      "The Password field is Required!",
-      "danger"
-    );
-    $("#password-blank").toast("show");
+    $("#empty-fields").toast("show");
   } else {
-    $.getJSON("../json/customer-details.json", function (data) {
-      let idExists = false;
-      for (var i = 0; i < data.length; i++) {
-        if (emailAddress.value === data[i].email) {
-          idExists = true;
-          if (password.value === data[i].password) {
-            console.log(data[i].name + " is Logged in");
-            document.cookie =
-              "userid=" +
-              data[i].id +
-              "; expires=" +
-              new Date("2022-12-31") +
-              " ;path=/";
-            location.href = "../index.html";
-          } else {
-            addToast(
-              "pass-error",
-              "Invalid Password",
-              "The Password you have entered is incorrect",
-              "danger"
-            );
-            $("#pass-error").toast("show");
-          }
+    let errors = "";
+    if (!ValidateEmail(emailAddress)) {
+      errors +=
+        "<p>The Email Address you have entered is not in the right format</p>";
+    }
+
+    if (errors != "") {
+      addToast(
+        "error-fields",
+        "Please rectify the below mentioned errors",
+        "<strong>" + errors + "</strong>",
+        "danger"
+      );
+      $("#error-fields").toast("show");
+    } else {
+      let userExists = false;
+      for (let i = 0; i < customerDetails.length; i++) {
+        if (customerDetails[i].email == emailAddress.value) {
+          userExists = true;
+          document.cookie = "userid=" + customerDetails[i].id + "; path='/'";
+          location.href = "../index.html";
+          break;
+        }
+        if (!userExists) {
+          addToast(
+            "user-not-exist",
+            "User is not registered",
+            "<b><p>The Email Address you have entered is already registered with FlipZon, please use the login page to login</p></b>",
+            "danger"
+          );
+          $("#user-exist").toast("show");
         }
       }
-
-      if (!idExists) {
-        addToast(
-          "user-not-found",
-          "User Not found",
-          "The Entered email address is not registered with FlipZon, Please register it",
-          "danger"
-        );
-        $("#user-not-found").toast("show");
-      }
-    });
+    }
   }
 };
 
