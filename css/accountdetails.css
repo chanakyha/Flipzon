@@ -210,6 +210,9 @@ hr {
   align-items: center;
   column-gap: 0.8rem;
 }
+.acc-btn-para {
+  margin: 0px !important;
+}
 /* for the sub menu contents */
 #acc-order {
   padding: 1rem;
