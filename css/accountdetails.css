@@ -172,7 +172,9 @@ ul li:hover a {
   width: 40rem;
 }
 
-/* css for account nav buttons */
+/* ==========
+  CSS for navigation buttons and content
+  ====================================== */
 hr {
   width: 95%;
   margin: auto;
