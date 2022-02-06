@@ -10,13 +10,22 @@ if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
   $(".signinbtn").css("display", "none");
 
-  $.getJSON("../json/customer-details.json", function (data) {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].id.toString() === document.cookie.replace("userid=", "")) {
-        document.getElementById("cart-items").innerText = data[i].cart.length;
-      }
+  const cookies = document.cookie.split("; ");
+
+  if (document.cookie.includes("G_ENABLED_IDPS")) {
+    cookieUserId = cookies[1];
+  } else {
+    cookieUserId = cookies[0];
+  }
+
+  for (let i = 0; i < customerDetails.length; i++) {
+    if (
+      customerDetails[i].id.toString() === cookieUserId.replace("userid=", "")
+    ) {
+      document.getElementById("cart-items").innerText =
+        customerDetails[i].cart.length;
     }
-  });
+  }
 } else {
   $(".accountdetails").css("display", "none");
   $(".signinbtn").css("display", "block");
@@ -25,4 +34,7 @@ if (document.cookie.includes("userid")) {
 document.getElementById("signout").onclick = function () {
   document.cookie = "userid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   location.href = "../index.html";
+};
+document.getElementById("cart").onclick = function () {
+  location.href = "../pages/cart.html";
 };
