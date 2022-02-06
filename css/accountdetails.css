@@ -175,6 +175,9 @@ ul li:hover a {
 /* ==========
   CSS for navigation buttons and content
   ====================================== */
+.text {
+  padding: 1rem;
+}
 hr {
   width: 95% !important;
   margin: auto !important;
@@ -239,5 +242,27 @@ hr {
   }
   .acc-btn-content {
     width: 80vw;
+  }
+}
+/* =======================
+    Content for prime
+ ============================= */
+#prime-title {
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.prime-flex-container {
+  padding: 2rem;
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 600px) {
+  .prime-flex-container {
+    flex-wrap: wrap;
   }
 }
