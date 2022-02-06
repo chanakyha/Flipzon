@@ -66,23 +66,82 @@
             </ul>
         </div>
     </header>
-    <!-- main  -->
-    <h1 id="h1">This is the Main Page</h1>
-    <!-- for nav buttons -->
-    <div class="acc-btn-container">
-        <div class="acc-button">
-            <img src="../img/box.svg" width="40rem">
-            <h1>Orders</h1>
+
+    <main>
+        <!-- ====================
+            for the nav buttons
+        ====================== -->
+        <div class="acc-btn-container">
+            <div class="acc-btn-content" id="order-btn">
+                <div class="acc-btn-title">
+                    <img src="../img/box.svg" width="30rem">
+                    <h3>Orders</h3>
+                </div>
+                <div>
+                    <p>Track, return or buy things again</p>
+                </div>
+            </div>
+            <div class="acc-btn-content" id="profile-btn">
+                <div class="acc-btn-title">
+                    <img class="avatar" src="../img/img_avatar.png" alt="avatar" width="40rem">
+                    <h3>Profile</h3>
+                </div>
+                <div>
+                    <p>Edit login details, address and much more</p>
+                </div>
+
+            </div>
+            <div class="acc-btn-content" id="payment-btn">
+                <div class="acc-btn-title">
+                    <img src="../img/card.svg" alt="card image" width="30rem">
+                    <h3>Payment options</h3>
+                </div>
+                <div>
+                    <p>Edit or add payment methods</p>
+                </div>
+            </div>
+            <div class="acc-btn-content" id="prime-btn">
+                <div class="acc-btn-title">
+                    <img src="../img/prime-mail.svg" alt="prime icon" width="30rem">
+                    <h3>Flipzon Prime</h3>
+                </div>
+                <div>
+                    <p>Know about our prime delivery, benifits and much more</p>
+                </div>
+            </div>
         </div>
-        <div class="acc-button">
-            <img class="avatar" src="../img/img_avatar.png" width="60rem">
-            <h1>Profile</h1>
+        <!-- ==================
+            content of the page
+        ========================= -->
+        <hr>
+        <div class="acc-main">
+            <div id="acc-order">
+                <h1>order info here</h1>
+                <p> orders Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, sit. Error iste perspiciatis
+                    laboriosam alias est enim nam at vel.</p>
+            </div>
+            <div id="acc-profile">
+                <h1>profile info here</h1>
+                <p> profile info Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis doloremque
+                    voluptate odio quibusdam quod tenetur similique quo deleniti vel!</p>
+            </div>
+            <div id="acc-payment">
+                <h1>payment info here </h1>
+                <p>payments Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, itaque cumque. Debitis
+                    aspernatur
+                    sequi numquam necessitatibus aperiam exercitationem quas hic.</p>
+            </div>
+            <div id="acc-prime">
+                <h1>prime subscription info here</h1>
+                <p>prime info Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis culpa recusandae,
+                    minus
+                    facere officiis cupiditate fuga eum ab dolorum quasi!</p>
+            </div>
         </div>
-        <div class="acc-button">
-            <img src="../img/card.svg" width="50rem" alt="card img  ">
-            <h1> Card details</h1>
-        </div>
-    </div>
+    </main>
+
+
+
 
     <!-- JSON Data -->
     <script src="../json/json-data.js"></script>

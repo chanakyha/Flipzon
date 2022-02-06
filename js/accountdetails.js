@@ -3,8 +3,6 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
-document.getElementById("h1").innerText =
-  "The ID is " + document.cookie.replace("userid=", "");
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
@@ -37,4 +35,35 @@ document.getElementById("signout").onclick = function () {
 };
 document.getElementById("cart").onclick = function () {
   location.href = "../pages/cart.html";
+};
+
+//for opening of sub menus using navigation buttons
+let accOrder = document.getElementById("acc-order");
+let accProfile = document.getElementById("acc-profile");
+let accPayment = document.getElementById("acc-payment");
+let accPrime = document.getElementById("acc-prime");
+
+document.getElementById("order-btn").onclick = function showorder() {
+  accOrder.style.display = "block";
+  accProfile.style.display = "none";
+  accPayment.style.display = "none";
+  accPrime.style.display = "none";
+};
+document.getElementById("profile-btn").onclick = function showprofile() {
+  accProfile.style.display = "block";
+  accOrder.style.display = "none";
+  accPayment.style.display = "none";
+  accPrime.style.display = "none";
+};
+document.getElementById("payment-btn").onclick = function showpayment() {
+  accPayment.style.display = "block";
+  accOrder.style.display = "none";
+  accProfile.style.display = "none";
+  accPrime.style.display = "none";
+};
+document.getElementById("prime-btn").onclick = function showprime() {
+  accPrime.style.display = "block";
+  accOrder.style.display = "none";
+  accPayment.style.display = "none";
+  accProfile.style.display = "none";
 };
