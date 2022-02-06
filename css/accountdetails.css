@@ -176,8 +176,8 @@ ul li:hover a {
   CSS for navigation buttons and content
   ====================================== */
 hr {
-  width: 95%;
-  margin: auto;
+  width: 95% !important;
+  margin: auto !important;
 }
 .acc-btn-container {
   padding: 1rem;
