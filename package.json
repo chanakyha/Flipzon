@@ -1,0 +1,23 @@
+{
+  "name": "flipzon",
+  "version": "1.0.0",
+  "description": "eCommerce site for buying mobile devices",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanakyha/Flipzon.git"
+  },
+  "author": "Chanakyha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanakyha/Flipzon/issues"
+  },
+  "homepage": "https://github.com/chanakyha/Flipzon#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security"
+  }
+}
