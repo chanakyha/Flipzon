@@ -66,23 +66,102 @@
             </ul>
         </div>
     </header>
-    <!-- main  -->
-    <h1 id="h1">This is the Main Page</h1>
-    <!-- for nav buttons -->
-    <div class="acc-btn-container">
-        <div class="acc-button">
-            <img src="../img/box.svg" width="40rem">
-            <h1>Orders</h1>
+
+    <main>
+        <!-- ====================
+            for the nav buttons
+        ====================== -->
+        <div class="acc-btn-container">
+            <div class="acc-btn-content" id="order-btn">
+                <div class="acc-btn-title">
+                    <img src="../img/box.svg" width="30rem">
+                    <h3>Orders</h3>
+                </div>
+                <div>
+                    <p class="acc-btn-para">Track, return or buy things again</p>
+                </div>
+            </div>
+            <div class="acc-btn-content" id="profile-btn">
+                <div class="acc-btn-title">
+                    <img class="avatar" src="../img/img_avatar.png" alt="avatar" width="30rem">
+                    <h3>Profile</h3>
+                </div>
+                <div>
+                    <p class="acc-btn-para">Edit login details, address and much more</p>
+                </div>
+
+            </div>
+            <div class="acc-btn-content" id="payment-btn">
+                <div class="acc-btn-title">
+                    <img src="../img/card.svg" alt="card image" width="30rem">
+                    <h3>Payment options</h3>
+                </div>
+                <div>
+                    <p class="acc-btn-para">Edit or add payment methods</p>
+                </div>
+            </div>
+            <div class="acc-btn-content" id="prime-btn">
+                <div class="acc-btn-title">
+                    <img src="../img/prime-mail.svg" alt="prime icon" width="30rem">
+                    <h3>Flipzon Prime</h3>
+                </div>
+                <div>
+                    <p class="acc-btn-para">Know about our prime delivery, benifits and much more</p>
+                </div>
+            </div>
         </div>
-        <div class="acc-button">
-            <img class="avatar" src="../img/img_avatar.png" width="60rem">
-            <h1>Profile</h1>
-        </div>
-        <div class="acc-button">
-            <img src="../img/card.svg" width="50rem" alt="card img  ">
-            <h1> Card details</h1>
-        </div>
-    </div>
+        <!-- ==================
+            content of the page
+        ========================= -->
+        <hr>
+        <div>
+            <div id="acc-order">
+                <h3>order info here</h3>
+                <p> orders Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, sit. Error iste perspiciatis
+                    laboriosam alias est enim nam at vel.</p>
+            </div>
+            <div id="acc-profile">
+                <h3>profile info here</h3>
+                <p> profile info Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis doloremque
+                    voluptate odio quibusdam quod tenetur similique quo deleniti vel!</p>
+            </div>
+            <div id="acc-payment">
+                <h3>payment info here </h3>
+                <p>payments Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, itaque cumque. Debitis
+                    aspernatur
+                    sequi numquam necessitatibus aperiam exercitationem quas hic.</p>
+            </div>
+            <div id="acc-prime">
+                <div style="text-align: center;">
+                    <img src="../img/prime-icon.svg" width="300vw" alt="prime logo">
+                </div>
+                <div class="prime-flex-container">
+                    <img src="../img/fast_delivery_prime.svg" alt="prime delivery" width="300vw">
+                    <h4 class="text">Free shipping. Get your package delivered, anywhere in the world free of charge.
+                        Exclusive to only members of Flipzon Prime</h4>
+                </div>
+                <div class="prime-flex-container">
+                    <img src="../img/peaceofmind_prime.svg" alt="safe orders with prime" width="250vw">
+                    <h4 class="text"> Peace of mind. With Flipzon Prime, you have more options for your delivery. Choose
+                        any time of the day as per your convinience for delivery. </h4>
+                </div>
+                <div class="prime-flex-container">
+                    <img src="../img/prime-speed-delivery.svg" alt="prime speed" width="250vw">
+                    <h4 class="text"> Speed. Orders processed with Flipzon Prime will reach to you within 3 days, with
+                        no additional shipping cost. What are you waiting for? Join Prime now!</h4>
+                </div>
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-info btn-lg"> Join Prime </button>
+
+                </div>
+            </div>
+    </main>
+
+
+
+
+    <!-- JSON Data -->
+    <script src="../json/json-data.js"></script>
     <!-- Booststrap Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
