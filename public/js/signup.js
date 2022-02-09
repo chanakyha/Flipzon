@@ -203,7 +203,7 @@ document.getElementById("submit").onclick = function () {
       alert(
         "Thank you for Registering with us & This Page will be redirected to login page to login"
       );
-      // location.href = "./login.html";
+      location.href = "./login.html";
     }
   }
 };
