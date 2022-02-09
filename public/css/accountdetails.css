@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+/* navbar CSS */
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background-color: #1d1f1d;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: #09c372;
+}
+nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+ul {
+  padding: 0 !important;
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover a {
+  color: #92badd;
+}
+.avatar {
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+#signout,
+#account {
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+#signout {
+  border: 1px solid red;
+}
+#account {
+  border: 1px solid #92badd;
+}
+
+#signout a {
+  color: red;
+}
+
+#account a {
+  color: #92badd;
+}
+/* for mobile view */
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  padding-top: 1.5rem !important;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+.mobile-menu li a {
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+}
+
+.searchbar_container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 18px;
+  width: 37em;
+  margin: 0px 10px;
+}
+
+.searchbar_container:focus-within {
+  border: 4px solid var(--bs-success);
+}
+.searchbar_container > input {
+  outline: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0px 10px;
+  width: 40rem;
+}
+
+/* ==========
+  CSS for navigation buttons and content
+  ====================================== */
+.text {
+  padding: 1rem;
+}
+hr {
+  width: 95% !important;
+  margin: auto !important;
+}
+.acc-btn-container {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.acc-btn-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  width: 30vw;
+  border: 0.2rem solid black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.acc-btn-content:hover {
+  text-shadow: 2.3px 2.3px 20px #92badd;
+  box-shadow: 0 0 20px 1px #92badd;
+}
+.acc-btn-title {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+.acc-btn-para {
+  margin: 0px !important;
+}
+/* for the sub menu contents */
+#acc-order {
+  padding: 1rem;
+  display: none;
+}
+#acc-profile {
+  padding: 1rem;
+  display: none;
+}
+#acc-payment {
+  padding: 1rem;
+  display: none;
+}
+#acc-prime {
+  padding: 1rem;
+  display: none;
+}
+/* media rule for mobile viewing of account buttons */
+@media (max-width: 600px) {
+  .acc-btn-container {
+    padding: 2rem;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .acc-btn-content {
+    width: 80vw;
+  }
+}
+/* =======================
+    Content for prime
+ ============================= */
+#prime-title {
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.prime-flex-container {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 600px) {
+  .prime-flex-container {
+    flex-wrap: wrap;
+  }
+}
