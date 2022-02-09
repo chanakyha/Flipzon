@@ -8,6 +8,38 @@ function ValidateEmail(input) {
   }
 }
 
+const sendData = (uri, data) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: true,
+      content: data,
+    }),
+  };
+
+  fetch(uri, options).then((response) => {});
+};
+
+const RecieveData = async (uri) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: false,
+      data: "",
+    }),
+  };
+
+  const response = await fetch(uri, options);
+  const data = await response.json();
+  return data;
+};
+
 const addCust = (
   e_name,
   e_photo,
@@ -17,19 +49,22 @@ const addCust = (
   e_password,
   e_prime
 ) => {
-  customerDetails += [
-    {
-      id: customerDetails.length,
-      avatar: e_photo,
-      name: e_name,
-      age: e_age,
-      number: e_number,
-      email: e_email,
-      password: e_password,
-      cart: [],
-      prime: e_prime,
-    },
-  ];
+  RecieveData("/customers").then((allCustomers) => {
+    data = [
+      {
+        id: allCustomers.length + 1,
+        avatar: e_photo,
+        name: e_name,
+        age: e_age,
+        number: e_number,
+        email: e_email,
+        password: e_password,
+        cart: [],
+        prime: e_prime,
+      },
+    ];
+    sendData("/customers", JSON.stringify(data, null, 2));
+  });
 };
 
 function sendmail(to, subject, body) {
@@ -123,13 +158,14 @@ document.getElementById("submit").onclick = function () {
     }
 
     custExists = false;
-
-    for (let i = 0; i < customerDetails.length; i++) {
-      if (customerDetails[i].email == emailAddress.value) {
-        custExists = true;
-        break;
+    RecieveData("/customers").then((allCustomers) => {
+      for (let i = 0; i < allCustomers.length; i++) {
+        if (allCustomers[i].email == emailAddress.value) {
+          custExists = true;
+          break;
+        }
       }
-    }
+    });
 
     if (custExists) {
       errors =
@@ -167,7 +203,7 @@ document.getElementById("submit").onclick = function () {
       alert(
         "Thank you for Registering with us & This Page will be redirected to login page to login"
       );
-      location.href = "./login.html";
+      // location.href = "./login.html";
     }
   }
 };

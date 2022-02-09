@@ -16,6 +16,7 @@ const readJSON = (file_path) => {
 };
 
 const writeJSON = (file_path, data) => {
+  data = readJSON(file_path).concat(JSON.parse(data));
   fs.writeFileSync(file_path, JSON.stringify(data, null, 2), (err) => {
     console.log(err);
   });
@@ -26,6 +27,10 @@ app.post("/customers", (req, res) => {
   if (!getData.send) {
     res.json(readJSON("./public/json/customers.json"));
   } else {
-    console.log("write");
+    console.log("Recieving");
+    console.log("writing the JSON file");
+    console.log(getData.content);
+    writeJSON("./public/json/customers.json", getData.content);
+    res.json({ status: "success" });
   }
 });
