@@ -3,7 +3,6 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
-<<<<<<< HEAD
 const RecieveData = async (uri) => {
   const options = {
     method: "POST",
@@ -21,8 +20,6 @@ const RecieveData = async (uri) => {
   return data;
 };
 
-=======
->>>>>>> c6672a531ad6c537f5ae41b8da20c08ab2acec30
 document.getElementById("h1").innerText =
   "The ID is " + document.cookie.replace("userid=", "");
 //for user authentication
