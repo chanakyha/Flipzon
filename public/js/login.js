@@ -1,3 +1,35 @@
+const sendData = (uri, data) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: true,
+      content: data,
+    }),
+  };
+
+  fetch(uri, options);
+};
+
+const RecieveData = async (uri) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: false,
+      data: undefined,
+    }),
+  };
+
+  const response = await fetch(uri, options);
+  const data = await response.json();
+  return data;
+};
+
 function ValidateEmail(input) {
   var validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -67,29 +99,56 @@ document.getElementById("submit").onclick = function () {
       );
       $("#error-fields").toast("show");
     } else {
-      let userExists = false;
-      for (let i = 0; i < customerDetails.length; i++) {
-        if (customerDetails[i].email == emailAddress.value) {
-          userExists = true;
-          document.cookie =
-            "userid=" +
-            customerDetails[i].id +
-            "; expires=" +
-            new Date("2022-12-31") +
-            " ;path=/";
-          location.href = "../index.html";
-          break;
+      RecieveData("/customers").then((data) => {
+        let allCustomers = data;
+        let userExists = false;
+
+        for (let i = 0; i < allCustomers.length; i++) {
+          if (allCustomers[i].email == emailAddress.value) {
+            userExists = true;
+            break;
+          }
         }
+
         if (!userExists) {
           addToast(
-            "user-not-exist",
-            "User is not registered",
-            "<b><p>The Email Address you have entered is already registered with FlipZon, please use the login page to login</p></b>",
+            "user-not-found",
+            "The User is not found",
+            "<b><p>There is no account registered with this email address, Use create account page to create an account</p></b>",
             "danger"
           );
-          $("#user-exist").toast("show");
+
+          $("#user-not-found").toast("show");
+        } else {
+          for (let i = 0; i < allCustomers.length; i++) {
+            if (allCustomers[i].email == emailAddress.value) {
+              if (allCustomers[i].password == password.value) {
+                addToast(
+                  "logged-in",
+                  "You are Logged in",
+                  "<p><b>Thank you for Logging in</b></p>",
+                  "success"
+                );
+                $("#logged-in").toast("show");
+
+                document.cookie = `userid=${allCustomers[i].id}; expires=${Date(
+                  "31-12-2022"
+                )}; path=/`;
+
+                location.href = "/";
+              } else {
+                addToast(
+                  "password-error",
+                  "Incorrect Password",
+                  "<b><p>The Password you have entered for the email address is invalid</p></b>",
+                  "danger"
+                );
+                $("#password-error").toast("show");
+              }
+            }
+          }
         }
-      }
+      });
     }
   }
 };
