@@ -2,6 +2,13 @@
 
 Live Preview of the Site: https://project-flipzon.chanakyha-coder.xyz/
 
+## To run the site in localhost
+
+- Donwload Node.Js from https://nodejs.org/dist/v16.14.0/node-v16.14.0-x64.msi
+- Then type "npm install -g nodemon"
+- Then type "nodemon" to run the site on localhost port 3000
+- Open the browser go to localhost:3000 to view the site
+
 ## Pages List
 
 - Home Page
@@ -75,4 +82,4 @@ Live Preview of the Site: https://project-flipzon.chanakyha-coder.xyz/
 | 3    | Rashwanth        | ["Home Page","Payment Method"]       |
 | 4    | Jyothi Sai Kiran | ["Each Mobile Page","About Us"]      |
 
-**Note:** All Integrate the json files using JQuery, which is very simple to load or write Json Files 
+**Note:** All Integrate the json files using JQuery, which is very simple to load or write Json Files
