@@ -1,6 +1,6 @@
 # Flipzon
 
-Live Preview of the Site: https://project-flipzon.chanakyha-coder.xyz/
+Live Preview of the Site: https://flipzon-project.herokuapp.com/
 
 ## To run the site in localhost
 
