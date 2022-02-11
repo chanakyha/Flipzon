@@ -265,7 +265,7 @@ hr {
   }
 }
 /* =======================
-    Content for payment
+    CSS for card details
  ============================= */
 .outer-box {
   margin: 1rem 10rem 0rem !important;
@@ -277,7 +277,6 @@ hr {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  /* column-gap: 10rem; */
   align-items: center;
 }
 #card-info {
