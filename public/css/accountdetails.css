@@ -123,7 +123,6 @@ ul li:hover a {
   align-items: center;
   justify-content: flex-start;
 }
-
 .mobile-menu {
   display: none;
   position: absolute;
@@ -263,5 +262,37 @@ hr {
 @media (max-width: 600px) {
   .prime-flex-container {
     flex-wrap: wrap;
+  }
+}
+/* =======================
+    Content for payment
+ ============================= */
+.outer-box {
+  margin: 1rem 10rem 0rem !important;
+  padding: 1rem;
+  border-radius: 8px;
+  border: solid 1px black;
+}
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  /* column-gap: 10rem; */
+  align-items: center;
+}
+#card-info {
+  width: 20rem;
+}
+/* media for card info mobile viewing */
+@media (max-width: 600px) {
+  .outer-box {
+    margin: 0.4rem !important;
+    padding: 1rem;
+  }
+  .card-container {
+    flex-flow: column wrap;
+  }
+  #card-info {
+    width: auto;
   }
 }
