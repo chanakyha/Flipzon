@@ -1,6 +1,6 @@
 [
     {
-      "id": 1,
+      "id": 9001,
       "mobile-name": "Realme x3 Superzoom",
       "mobile-brand": "Realme",
       "product-img": "x3-superzoom.jpg",
@@ -21,7 +21,7 @@
       "offer-percentage": 12
     },
     {
-      "id": 2,
+      "id": 9002,
       "mobile-name": "Iphone 13 pro max",
       "mobile-brand": "Apple",
       "product-img": "iphone.png",

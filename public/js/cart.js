@@ -43,6 +43,24 @@ if (document.cookie.includes("userid")) {
           $(".cart-table").html(
             "<div class='alert bg-danger text-light'><p>No items in your cart</p></div>"
           );
+        } else {
+          let htmlTable = "";
+          let cartDetailsId = allCustomers[i].cart;
+          for (let i = 0; i < cartDetailsId.length; i++) {
+            htmlTable += `<tr>
+              <td>${i + 1}</td>
+              <td>${cartDetailsId[i].id}</td>
+              <td>${cartDetailsId[i].name}</td>
+              <td><a href="#">More Details...</a></td>
+              <td>${cartDetailsId[i].quantity}</td>
+              <td>&#8377; ${cartDetailsId[i].mrp}</td>
+              <td>${cartDetailsId[i].coupon || "NO COUPON"}</td>
+              <td>&#8377; ${
+                cartDetailsId[i].mrp * cartDetailsId[i].quantity
+              }</td>
+            </tr>`;
+          }
+          $(".cart-table-body").html(htmlTable);
         }
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
