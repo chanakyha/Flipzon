@@ -267,7 +267,7 @@ hr {
 /* =======================
     CSS for card details
  ============================= */
-.outer-box {
+.card-outer-box {
   margin: 1rem 10rem 0rem !important;
   padding: 1rem;
   border-radius: 8px;
