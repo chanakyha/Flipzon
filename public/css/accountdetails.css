@@ -295,3 +295,37 @@ hr {
     width: auto;
   }
 }
+/* =================
+  CSS for order page
+=================== */
+.order-outer-box {
+  margin: 1rem 1rem 0rem !important;
+  padding: 1rem;
+  border-radius: 8px;
+  border: solid 1px black;
+}
+.order-header {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.order-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.order-info {
+  width: 20rem;
+}
+/* media for mobile viewing of orders */
+@media (max-width: 600px) {
+  .order-outer-box {
+    margin: 0.4rem !important;
+  }
+  .order-container {
+    flex-flow: column wrap;
+    row-gap: 1rem;
+  }
+}
