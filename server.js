@@ -34,3 +34,15 @@ app.post("/customers", (req, res) => {
     res.json({ status: "success" });
   }
 });
+app.post("/coupons", (req, res) => {
+  getData = req.body;
+  if (!getData.send) {
+    res.json(readJSON("./public/json/coupons.json"));
+  } else {
+    console.log("Recieving");
+    console.log("writing the JSON file");
+    console.log(getData.content);
+    writeJSON("./public/json/customers.json", getData.content);
+    res.json({ status: "success" });
+  }
+});

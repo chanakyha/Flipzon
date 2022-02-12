@@ -63,18 +63,63 @@ if (document.cookie.includes("userid")) {
               <td>${cartDetailsId[i].id}</td>
               <td>${cartDetailsId[i].name}</td>
               <td><a href="#">More Details...</a></td>
-              <td>${cartDetailsId[i].quantity}</td>
+              <td>x${cartDetailsId[i].quantity}</td>
               <td>${toIndianRuppe(cartDetailsId[i].mrp)}</td>
-              <td>${cartDetailsId[i].coupon || "NO COUPON"}</td>
               <td>${toIndianRuppe(
                 cartDetailsId[i].mrp * cartDetailsId[i].quantity
               )}</td>
             </tr>`;
             totalPrice += cartDetailsId[i].mrp * cartDetailsId[i].quantity;
           }
+
+          $(".remove-coupon").css("display", "none");
+          $(".entered-coupon").keyup(() => {
+            $(".entered-coupon").val($(".entered-coupon").val().toUpperCase());
+          });
+
+          let beforeCouponPrice = totalPrice;
+
+          $(".apply-coupon").click(() => {
+            RecieveData("/coupons").then((coupon) => {
+              let entertedCoupon = $(".entered-coupon").val();
+              for (let i = 0; i < coupon.length; i++) {
+                if (coupon[i].tag == entertedCoupon) {
+                  $(".entered-coupon").attr("disabled", true);
+                  $(".price-reduced").html(
+                    toIndianRuppe(totalPrice * (coupon[i].percentage / 100)) +
+                      ` (${coupon[i].percentage}%)`
+                  );
+                  totalPrice -= totalPrice * (coupon[i].percentage / 100);
+                  $(".final-price-1").html(
+                    toIndianRuppe((5 / 100) * totalPrice + totalPrice)
+                  );
+                  $(".apply-coupon").css("display", "none");
+                  $(".remove-coupon").css("display", "inline");
+                }
+              }
+            });
+          });
+
+          $(".remove-coupon").click(() => {
+            totalPrice = beforeCouponPrice;
+            console.log($(".price-reduced").html());
+            $(".price-reduced").html(toIndianRuppe(0));
+            $(".final-price-1").html(
+              toIndianRuppe((5 / 100) * totalPrice + totalPrice)
+            );
+            $(".entered-coupon").val("");
+            $(".entered-coupon").attr("disabled", false);
+            $(".apply-coupon").css("display", "inline");
+            $(".remove-coupon").css("display", "none");
+          });
+
           $(".cart-table-body").html(htmlTable);
           $(".total-mrp").html("&nbsp;" + toIndianRuppe(totalPrice));
           $(".price-reduced").html(toIndianRuppe(0));
+          $(".tax-percentage").html("5%");
+          $(".final-price-1").html(
+            toIndianRuppe((5 / 100) * totalPrice + totalPrice)
+          );
 
           console.log(totalPrice);
         }
