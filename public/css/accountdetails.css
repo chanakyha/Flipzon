@@ -329,3 +329,24 @@ hr {
     row-gap: 1rem;
   }
 }
+/* =================
+  CSS for profile page
+=================== */
+.profile-outer-box {
+  margin: 1rem 1rem 0rem !important;
+  padding: 1rem;
+  border-radius: 8px;
+  border: solid 1px black;
+}
+.profile-header {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .profile-outer-box {
+    margin: 0.4rem !important;
+    padding: 1rem;
+  }
+}

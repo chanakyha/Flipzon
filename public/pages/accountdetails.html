@@ -146,10 +146,48 @@
             </div>
             <!-- for profile -->
             <div id="acc-profile">
-                <h3>profile info here</h3>
-                <p> profile info Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis
-                    doloremque
-                    voluptate odio quibusdam quod tenetur similique quo deleniti vel!</p>
+                <div class="profile-outer-box">
+
+                    <div class="profile-header">
+                        <img class="avatar" src="../img/img_avatar.png" alt="avatar" width="80rem">
+                        <h1>Your Profile</h1>
+                    </div>
+
+                    <!-- creating text input for user info -->
+                    <form>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Name"
+                                aria-describedby="basic-addon1" value="Chanakhya">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">E-mail</span>
+                            <input type="text" class="form-control" placeholder="" aria-label="E-mail"
+                                aria-describedby="basic-addon1" value="vetrichanakyha2003@gmail.com">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Contact</span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Contact"
+                                aria-describedby="basic-addon1" value="9981928198">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupFile01">Change your avatar</label>
+                            <input type="file" class="form-control" id="inputGroupFile01">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Age</span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Age"
+                                aria-describedby="basic-addon1" value="18">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Address</span>
+                            <input type="text" class="form-control" placeholder="" aria-label="Address"
+                                aria-describedby="basic-addon1" value="501, SRM ramapuram, Chennai, 400092, India">
+                        </div>
+                        <button type="reset" class="btn btn-danger"> Reset Changes</button>
+                        <button type="button" class="btn btn-success"> Update Profile</button>
+                    </form>
+                </div>
             </div>
             <!-- for card details -->
             <div id="acc-payment">
