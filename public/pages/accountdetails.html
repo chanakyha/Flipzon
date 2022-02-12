@@ -115,62 +115,88 @@
         ========================= -->
         <hr>
         <div>
+            <!-- for orders -->
             <div id="acc-order">
-                <div class="order-header">
-                    <img src="../img/ontheway_illustration.svg" width="100rem">
-                    <h1>Order details</h1>
-                </div>
-            </div>
-            <div id="acc-profile">
-                <h3>profile info here</h3>
-                <p> profile info Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis doloremque
-                    voluptate odio quibusdam quod tenetur similique quo deleniti vel!</p>
-            </div>
-            <div id="acc-payment">
                 <div style="text-align: center;">
-                    <h1>Your card details</h1>
+                    <div class="order-header">
+                        <img src="../img/ontheway_illustration.svg" width="90rem">
+                        <h1>Order details</h1>
+                    </div>
                 </div>
-                <div class="outer-box">
-                    <!-- ========================
-                        Payment Cards container
-                    ========================= -->
-                    <div class="card-container">
-                        <img src="../img/cardsvg.svg" width="150rem">
-                        <div id="card-info">
-                            <h6 id="type">Debit card 1</h6>
-                            <h4 id="card-bank">State Bank of India Card <h6><sub>with number ending in</sub></h6>
-                            </h4>
-                            <h1 id="card-end-number">8437</h1>
-                            <button type="button" class="btn btn-warning">Change card Info</button>
+                <div class="order-outer-box">
+                    <div class="order-container">
+                        <img src="../img/order_illustration.svg" alt="order image" width="200rem">
+                        <div class="order-info">
+                            <p>Your order will be delivered by:</p>
+                            <h2>Monday, 15th April 2022</h2>
+                            <p>Your secret delivery PIN (please give only to delivery person):</p>
+                            <h3>8437</h3>
+                        </div>
+                        <div class="order-info">
+                            <p>Delivery address: </p>
+                            <h6>501, SRM ramapuram, Chennai, 400092, India</h6>
+                            <button type="button" class="btn btn-danger"> Cancel Order</button>
+                            <button type="button" class="btn btn-warning"> Change Address </button>
                         </div>
                     </div>
                 </div>
+                <!-- for profile -->
+                <div id="acc-profile">
+                    <h3>profile info here</h3>
+                    <p> profile info Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis
+                        doloremque
+                        voluptate odio quibusdam quod tenetur similique quo deleniti vel!</p>
+                </div>
+                <!-- for card details -->
+                <div id="acc-payment">
+                    <div style="text-align: center;">
+                        <h1>Your card details</h1>
+                    </div>
+                    <div class="card-outer-box">
+                        <!-- ========================
+                        Payment Cards container
+                    ========================= -->
+                        <div class="card-container">
+                            <img src="../img/cardsvg.svg" width="150rem">
+                            <div id="card-info">
+                                <h6 id="type">Debit card 1</h6>
+                                <h4 id="card-bank">State Bank of India Card <h6><sub>with number ending in</sub></h6>
+                                </h4>
+                                <h1 id="card-end-number">8437</h1>
+                                <button type="button" class="btn btn-warning">Change card Info</button>
+                            </div>
+                        </div>
+                    </div>
 
-            </div>
-            <div id="acc-prime">
-                <div style="text-align: center;">
-                    <img src="../img/prime-icon.svg" width="300vw" alt="prime logo">
                 </div>
-                <div class="prime-flex-container">
-                    <img src="../img/fast_delivery_prime.svg" alt="prime delivery" width="300vw">
-                    <h4 class="text">Free shipping. Get your package delivered, anywhere in the world free of charge.
-                        Exclusive to only members of Flipzon Prime</h4>
-                </div>
-                <div class="prime-flex-container">
-                    <img src="../img/peaceofmind_prime.svg" alt="safe orders with prime" width="250vw">
-                    <h4 class="text"> Peace of mind. With Flipzon Prime, you have more options for your delivery. Choose
-                        any time of the day as per your convinience for delivery. </h4>
-                </div>
-                <div class="prime-flex-container">
-                    <img src="../img/prime-speed-delivery.svg" alt="prime speed" width="250vw">
-                    <h4 class="text"> Speed. Orders processed with Flipzon Prime will reach to you within 3 days, with
-                        no additional shipping cost. What are you waiting for? Join Prime now!</h4>
-                </div>
-                <div style="text-align: center;">
-                    <button type="button" class="btn btn-info btn-lg"> Join Prime </button>
+                <!-- for prime details -->
+                <div id="acc-prime">
+                    <div style="text-align: center;">
+                        <img src="../img/prime-icon.svg" width="300vw" alt="prime logo">
+                    </div>
+                    <div class="prime-flex-container">
+                        <img src="../img/fast_delivery_prime.svg" alt="prime delivery" width="300vw">
+                        <h4 class="text">Free shipping. Get your package delivered, anywhere in the world free of
+                            charge.
+                            Exclusive to only members of Flipzon Prime</h4>
+                    </div>
+                    <div class="prime-flex-container">
+                        <img src="../img/peaceofmind_prime.svg" alt="safe orders with prime" width="250vw">
+                        <h4 class="text"> Peace of mind. With Flipzon Prime, you have more options for your delivery.
+                            Choose
+                            any time of the day as per your convinience for delivery. </h4>
+                    </div>
+                    <div class="prime-flex-container">
+                        <img src="../img/prime-speed-delivery.svg" alt="prime speed" width="250vw">
+                        <h4 class="text"> Speed. Orders processed with Flipzon Prime will reach to you within 3 days,
+                            with
+                            no additional shipping cost. What are you waiting for? Join Prime now!</h4>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="button" class="btn btn-info btn-lg"> Join Prime </button>
 
+                    </div>
                 </div>
-            </div>
     </main>
 
 
