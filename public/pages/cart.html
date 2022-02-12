@@ -73,21 +73,39 @@
     </div>
 
     <div class="cart-table">
-        <table class="table-bordered">
-            <tr>
-                <th>S.No</th>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>More Details</th>
-                <th>Quantity</th>
-                <th>Price for 1</th>
-                <th>Coupon</th>
-                <th>Final Price</th>
-            </tr>
-            <tbody class="cart-table-body">
+        <div class="cart-main-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>More Details</th>
+                        <th>Quantity</th>
+                        <th>Price for 1</th>
+                        <th>Coupon</th>
+                        <th>Final Price</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-table-body">
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="final-price">
+            <h3>Total</h3>
+            <hr>
+            <p><b>Total Above Price: </b><span class="total-mrp"></span></p>
+            <p>
+                <b>Coupon TAG: </b>
+                <input class="coupon-tag"></input>
+                <input type="submit" class="btn btn-success" value="Apply">
+            </p>
+            <p><b>Price Reduced: </b><span class="price-reduced"></span></p>
+            <p><b>Tax %: </b><span class="tax-percentage"></span></p>
+            <p><b>Final Price: </b><span class="final-price"></span></p>
+        </div>
     </div>
 
 

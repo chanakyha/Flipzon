@@ -20,6 +20,16 @@ const RecieveData = async (uri) => {
   return data;
 };
 
+const toIndianRuppe = (number) => {
+  let transformed = number.toLocaleString("en-IN", {
+    maximumFractionDigits: 2,
+    style: "currency",
+    currency: "INR",
+  });
+
+  return transformed;
+};
+
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
@@ -44,6 +54,7 @@ if (document.cookie.includes("userid")) {
             "<div class='alert bg-danger text-light'><p>No items in your cart</p></div>"
           );
         } else {
+          let totalPrice = 0;
           let htmlTable = "";
           let cartDetailsId = allCustomers[i].cart;
           for (let i = 0; i < cartDetailsId.length; i++) {
@@ -53,14 +64,19 @@ if (document.cookie.includes("userid")) {
               <td>${cartDetailsId[i].name}</td>
               <td><a href="#">More Details...</a></td>
               <td>${cartDetailsId[i].quantity}</td>
-              <td>&#8377; ${cartDetailsId[i].mrp}</td>
+              <td>${toIndianRuppe(cartDetailsId[i].mrp)}</td>
               <td>${cartDetailsId[i].coupon || "NO COUPON"}</td>
-              <td>&#8377; ${
+              <td>${toIndianRuppe(
                 cartDetailsId[i].mrp * cartDetailsId[i].quantity
-              }</td>
+              )}</td>
             </tr>`;
+            totalPrice += cartDetailsId[i].mrp * cartDetailsId[i].quantity;
           }
           $(".cart-table-body").html(htmlTable);
+          $(".total-mrp").html("&nbsp;" + toIndianRuppe(totalPrice));
+          $(".price-reduced").html(toIndianRuppe(0));
+
+          console.log(totalPrice);
         }
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
