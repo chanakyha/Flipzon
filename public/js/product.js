@@ -76,10 +76,10 @@ RecieveData("/mobiles").then((mobileData) => {
           <img src="../img/productimg/${img}">
           <h4>${name}</h4>
       </a>
+      <h4>&#8377; ${price}</h4>
       <div class="rating">
           ${'<i class="fa fa-star"></i> '.repeat(rating)}
       </div>
-      <p><i class="fa fa-inr"></i>${price}</p>
     </div>`;
 
     $(".mobile-phones").html($(".mobile-phones").html() + html);
