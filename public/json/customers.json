@@ -32,6 +32,21 @@
         "holderName": "Chan"
       }
     ],
+    "orders": [
+      {
+        "id": 100001,
+        "products": [
+          {
+            "id": 9002,
+            "prouctName": "Iphone 13 pro max"
+          }
+        ],
+        "deliveryDate": "Sun Feb 13 2022",
+        "pin": 8437,
+        "address": "501, SRM ramapuram, Chennai, 400092, India",
+        "status": "Dispatched"
+      }
+    ],
     "prime": false
   },
   {
@@ -45,6 +60,7 @@
     "password": "atharva",
     "cart": [],
     "cards": [],
+    "orders": [],
     "prime": true
   }
 ]

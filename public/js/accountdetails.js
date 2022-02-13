@@ -35,6 +35,29 @@ const RecieveData = async (uri) => {
   return data;
 };
 
+$(".update-profile").css("display", "none");
+$(".update-profile").click(() => {
+  $(".edit-profile").css("display", "inline");
+  $(".update-profile").css("display", "none");
+
+  $(".name").attr("readonly", true);
+  $(".email").attr("readonly", true);
+  $(".number").attr("readonly", true);
+  $(".age").attr("readonly", true);
+  $(".address").attr("readonly", true);
+});
+
+$(".edit-profile").click(() => {
+  $(".update-profile").css("display", "inline");
+  $(".edit-profile").css("display", "none");
+
+  $(".name").attr("readonly", false);
+  $(".email").attr("readonly", false);
+  $(".number").attr("readonly", false);
+  $(".age").attr("readonly", false);
+  $(".address").attr("readonly", false);
+});
+
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
@@ -57,28 +80,70 @@ if (document.cookie.includes("userid")) {
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
 
+        allCustomers[i].prime &&
+          $(".join-prime").text("You are already a Prime Member") &&
+          $(".join-prime").attr("disabled", true);
+
         let hisCards = data[i].cards;
+        let hisOrders = data[i].orders;
 
         const addCard = (type, bank, fourDigits) => {
           html = `
           <div class="card-outer-box">
-          <div class="card-container">
-          <img src="../img/cardsvg.svg" width="150rem">
-          <div id="card-info">
-              <h6 id="type">${type}</h6>
-              <h4 id="card-bank">${bank}<h6><sub>with number ending in</sub></h6>
-              </h4>
-              <h1 id="card-end-number">${fourDigits}</h1>
-              <button type="button" class="btn btn-warning">Change card Info</button>
-          </div>
-      </div>
-      </div>`;
+            <div class="card-container">
+            <img src="../img/cardsvg.svg" width="150rem">
+              <div id="card-info">
+                  <h6 id="type">${type}</h6>
+                  <h4 id="card-bank">${bank}<h6><sub>with number ending in</sub></h6>
+                  </h4>
+                  <h1 id="card-end-number">${fourDigits}</h1>
+                  <button type="button" class="btn btn-warning">Change card Info</button>
+              </div>
+            </div>
+          </div>`;
 
           $(".cardbox-container").html($(".cardbox-container").html() + html);
         };
 
+        const addOrders = (date, product, pin, address, status) => {
+          html = `
+          <div class="order-outer-box">
+            <div class="order-container">
+                <div style="text-align: center; ">
+                    <img src="../img/order_illustration.svg" alt="order image" width="200rem">
+                    <p><b>${product}</b></p>
+                </div>
+                <div class="order-info">
+                    <p>Your order will be delivered by:</p>
+                    <h2>${date}</h2>
+                    <p>Your secret delivery PIN (please give only to delivery person):</p>
+                    <h3>${pin}</h3>
+                </div>
+                <div class="order-info">
+                    <p>Delivery address: </p>
+                    <h6>${address}</h6>
+                    <p>Delivery Status: <b>${status}</b></p>
+                    <button type="button" class="btn btn-danger"> Cancel Order</button>
+                    <button type="button" class="btn btn-warning"> Change Address </button>
+                </div>
+            </div>
+          </div>`;
+
+          $(".orders-container").html($(".orders-container").html() + html);
+        };
+
         hisCards.map((card) => {
           addCard(card.type, card.bank, card.number.toString().slice(12, 16));
+        });
+
+        hisOrders.map((order) => {
+          addOrders(
+            order.deliveryDate,
+            order.products[0].prouctName,
+            order.pin,
+            order.address,
+            order.status
+          );
         });
 
         $(".name").attr("readonly", true);
