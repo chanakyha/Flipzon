@@ -15,6 +15,23 @@ if (document.cookie.includes("userid")) {
     cookieUserId = cookies[0];
   }
 
+  const RecieveData = async (uri) => {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        send: false,
+        data: undefined,
+      }),
+    };
+
+    const response = await fetch(uri, options);
+    const data = await response.json();
+    return data;
+  };
+
   RecieveData("/customers").then((data) => {
     let allCustomers = data;
     for (let i = 0; i < allCustomers.length; i++) {
