@@ -56,6 +56,7 @@ const addCust = (
         avatar: e_photo,
         name: e_name,
         age: e_age,
+        address: "",
         number: e_number,
         email: e_email,
         password: e_password,
@@ -82,23 +83,12 @@ function sendmail(to, subject, body) {
 }
 
 function addToast(id, title, message, bg) {
-  const toastHtml =
-    `<div class="toast" id="` +
-    id +
-    `" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
-      <div class="toast-header text-light bg-` +
-    bg +
-    `">
-        <strong class="me-auto">` +
-    title +
-    `</strong>
+  const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
+      <div class="toast-header text-light bg-${bg}">
+        <strong class="me-auto">${title}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <div class="toast-body">
-        ` +
-    message +
-    `
-      </div>
+      <div class="toast-body">${message}</div>
     </div>`;
 
   document.getElementById("error-toast-container").innerHTML = toastHtml;
