@@ -117,7 +117,7 @@ if (document.cookie.includes("userid")) {
                   addToast(
                     "coupon-error",
                     "Invalid Coupon Code",
-                    "The Coupon Code you have entered is Invalid",
+                    "<b>The Coupon Code you have entered is Invalid</b>",
                     "danger"
                   );
                   $("#coupon-error").toast("show");

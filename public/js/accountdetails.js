@@ -57,6 +57,30 @@ if (document.cookie.includes("userid")) {
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
 
+        let hisCards = data[i].cards;
+
+        const addCard = (type, bank, fourDigits) => {
+          html = `
+          <div class="card-outer-box">
+          <div class="card-container">
+          <img src="../img/cardsvg.svg" width="150rem">
+          <div id="card-info">
+              <h6 id="type">${type}</h6>
+              <h4 id="card-bank">${bank}<h6><sub>with number ending in</sub></h6>
+              </h4>
+              <h1 id="card-end-number">${fourDigits}</h1>
+              <button type="button" class="btn btn-warning">Change card Info</button>
+          </div>
+      </div>
+      </div>`;
+
+          $(".cardbox-container").html($(".cardbox-container").html() + html);
+        };
+
+        hisCards.map((card) => {
+          addCard(card.type, card.bank, card.number.toString().slice(12, 16));
+        });
+
         $(".name").attr("readonly", true);
         $(".email").attr("readonly", true);
         $(".number").attr("readonly", true);

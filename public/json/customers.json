@@ -24,6 +24,14 @@
         "coupon": false
       }
     ],
+    "cards": [
+      {
+        "number": 1234567898965432,
+        "type": "Debit Card",
+        "bank": "State Bank of India",
+        "holderName": "Chan"
+      }
+    ],
     "prime": false
   },
   {
@@ -36,6 +44,7 @@
     "email": "atharva.p@gmail.com",
     "password": "atharva",
     "cart": [],
+    "cards": [],
     "prime": true
   }
 ]
