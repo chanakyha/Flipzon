@@ -3,6 +3,21 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+const sendData = (uri, data) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: true,
+      content: data,
+    }),
+  };
+
+  fetch(uri, options);
+};
+
 const RecieveData = async (uri) => {
   const options = {
     method: "POST",
@@ -99,3 +114,5 @@ document.getElementById("prime-btn").onclick = function showprime() {
   accPayment.style.display = "none";
   accProfile.style.display = "none";
 };
+
+document.getElementById("profile-btn").click();
