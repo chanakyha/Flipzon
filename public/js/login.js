@@ -40,28 +40,19 @@ function ValidateEmail(input) {
   }
 }
 
-function addToast(id, title, message, bg) {
-  const toastHtml =
-    `<div class="toast" id="` +
-    id +
-    `" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
-    <div class="toast-header text-light bg-` +
-    bg +
-    `">
-      <strong class="me-auto">` +
-    title +
-    `</strong>
+const addToast = (id, title, message, bg) => {
+  const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
+    <div class="toast-header text-light bg-${bg}">
+      <strong class="me-auto">${title}</strong>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
-      ` +
-    message +
-    `
+      ${message}
     </div>
   </div>`;
 
   document.getElementById("error-toast-container").innerHTML = toastHtml;
-}
+};
 
 document.getElementById("submit").onclick = function () {
   let emailAddress = document.getElementById("email");
