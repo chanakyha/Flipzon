@@ -58,6 +58,31 @@ $(".edit-profile").click(() => {
   $(".address").attr("readonly", false);
 });
 
+const addToast = (id, title, message, bg) => {
+  const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
+    <div class="toast-header text-light bg-${bg}">
+      <strong class="me-auto">${title}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      ${message}
+    </div>
+  </div>`;
+
+  document.getElementById("error-toast-container").innerHTML = toastHtml;
+};
+
+$(".join-prime").click(() => {
+  addToast(
+    "joined-prime",
+    "Unlocked Prime",
+    "<b>Thank you for joining the prime membership, Level Up ++</b>",
+    "info"
+  );
+
+  $("#joined-prime").toast("show");
+});
+
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
