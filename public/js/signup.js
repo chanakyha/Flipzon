@@ -61,10 +61,11 @@ const addCust = (
         email: e_email,
         password: e_password,
         cart: [],
+        orders: [],
         prime: e_prime,
       },
     ];
-    sendData("/customers", JSON.stringify(data, null, 2));
+    sendData("/customers", JSON.stringify(data, null, 2), true);
   });
 };
 

@@ -35,29 +35,6 @@ const RecieveData = async (uri) => {
   return data;
 };
 
-$(".update-profile").css("display", "none");
-$(".update-profile").click(() => {
-  $(".edit-profile").css("display", "inline");
-  $(".update-profile").css("display", "none");
-
-  $(".name").attr("readonly", true);
-  $(".email").attr("readonly", true);
-  $(".number").attr("readonly", true);
-  $(".age").attr("readonly", true);
-  $(".address").attr("readonly", true);
-});
-
-$(".edit-profile").click(() => {
-  $(".update-profile").css("display", "inline");
-  $(".edit-profile").css("display", "none");
-
-  $(".name").attr("readonly", false);
-  $(".email").attr("readonly", false);
-  $(".number").attr("readonly", false);
-  $(".age").attr("readonly", false);
-  $(".address").attr("readonly", false);
-});
-
 const addToast = (id, title, message, bg) => {
   const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
     <div class="toast-header text-light bg-${bg}">
@@ -182,6 +159,38 @@ if (document.cookie.includes("userid")) {
         $(".number").val(allCustomers[i].number);
         $(".age").val(allCustomers[i].age);
         $(".address").val(allCustomers[i].address);
+
+        $(".update-profile").css("display", "none");
+        $(".update-profile").click(() => {
+          alert("Your Profile has been updated successfully");
+          $(".edit-profile").css("display", "inline");
+          $(".update-profile").css("display", "none");
+
+          allCustomers[i].name = $(".name").val();
+          allCustomers[i].email = $(".email").val();
+          allCustomers[i].number = parseInt($(".number").val());
+          allCustomers[i].age = parseInt($(".age").val());
+          allCustomers[i].address = $(".address").val();
+
+          $(".name").attr("readonly", true);
+          $(".email").attr("readonly", true);
+          $(".number").attr("readonly", true);
+          $(".age").attr("readonly", true);
+          $(".address").attr("readonly", true);
+
+          sendData("/customers", JSON.stringify(allCustomers, null, 2), false);
+        });
+
+        $(".edit-profile").click(() => {
+          $(".update-profile").css("display", "inline");
+          $(".edit-profile").css("display", "none");
+
+          $(".name").attr("readonly", false);
+          $(".email").attr("readonly", false);
+          $(".number").attr("readonly", false);
+          $(".age").attr("readonly", false);
+          $(".address").attr("readonly", false);
+        });
       }
     }
   });

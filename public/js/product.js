@@ -2,6 +2,23 @@
 function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
+
+const RecieveData = async (uri) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: false,
+      data: undefined,
+    }),
+  };
+
+  const response = await fetch(uri, options);
+  const data = await response.json();
+  return data;
+};
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
@@ -14,23 +31,6 @@ if (document.cookie.includes("userid")) {
   } else {
     cookieUserId = cookies[0];
   }
-
-  const RecieveData = async (uri) => {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        send: false,
-        data: undefined,
-      }),
-    };
-
-    const response = await fetch(uri, options);
-    const data = await response.json();
-    return data;
-  };
 
   RecieveData("/customers").then((data) => {
     let allCustomers = data;
@@ -67,3 +67,31 @@ document.getElementById("signout").onclick = function () {
 document.getElementById("cart").onclick = function () {
   location.href = "../pages/cart.html";
 };
+
+RecieveData("/mobiles").then((mobileData) => {
+  const addMobile = (img, name, rating, toLink, price) => {
+    let html = `
+    <div class="col-4">
+      <a href="./${toLink}.html" class="link">
+          <img src="../img/productimg/${img}">
+          <h4>${name}</h4>
+      </a>
+      <div class="rating">
+          ${'<i class="fa fa-star"></i> '.repeat(rating)}
+      </div>
+      <p><i class="fa fa-inr"></i>${price}</p>
+    </div>`;
+
+    $(".mobile-phones").html($(".mobile-phones").html() + html);
+  };
+
+  mobileData.map((mobile) => {
+    addMobile(
+      mobile.img,
+      mobile.name,
+      mobile.rating,
+      mobile.name.replace(" ", "-"),
+      mobile.mrp
+    );
+  });
+});

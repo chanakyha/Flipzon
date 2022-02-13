@@ -1,44 +1,23 @@
 [
     {
       "id": 9001,
-      "mobile-name": "Realme x3 Superzoom",
+      "name": "Realme x3 Superzoom",
       "mobile-brand": "Realme",
-      "product-img": "x3-superzoom.jpg",
+      "img": "x3-superzoom.jpg",
+      "rating": 3,
       "specs": {
-        "display": "",
-        "processor": "",
-        "front-camera": "",
-        "rear-camera": "",
-        "ram": "",
-        "storage": "",
-        "battery-capacity": "",
-        "os": "",
+        "display": "120 Hz Smooth Display UIS and UIS Max Ultra Image Stabilization Liquid Cooling System",
+        "processor": "Qualcomm Snapdragon 855+",
+        "camera": "Main Camera 64 MP + Periscope 8 MP + Wide Angle 8 MP + Macro 2 MP, Main Camera - 1/1.72, 0.8 um, Periscope - 1/4.4, 1.008 um, Wide Angle - 1/4, 1.12 um, Macro - 1/5, 1.75 um, Sensor Type: COB + COB + COB + CSP",
+        "ram": "8 GB RAM",
+        "storage": "128 GB ROM",
+        "battery-capacity": "4200 mAh Battery",
+        "os": "Android",
         "expandable-storage": false,
         "dual-sim": true,
         "refresh-rate": "120hz"
       },
-      "mrp-price": 29000,
-      "offer-percentage": 12
-    },
-    {
-      "id": 9002,
-      "mobile-name": "Iphone 13 pro max",
-      "mobile-brand": "Apple",
-      "product-img": "iphone.png",
-      "specs": {
-        "display": "",
-        "processor": "",
-        "front-camera": "",
-        "rear-camera": "",
-        "ram": "",
-        "storage": "",
-        "battery-capacity": "",
-        "os": "",
-        "expandable-storage": false,
-        "dual-sim": true,
-        "refresh-rate": "120hz"
-      },
-      "mrp-price": 129000,
-      "offer-percentage": 12
+      "mrp": 22648,
+      "offer-percentage": 8
     }
   ]

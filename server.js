@@ -15,8 +15,12 @@ const readJSON = (file_path) => {
   return JSON.parse(data);
 };
 
-const writeJSON = (file_path, data) => {
-  data = readJSON(file_path).concat(JSON.parse(data));
+const writeJSON = (file_path, data, extraData) => {
+  if (extraData) {
+    data = readJSON(file_path).concat(JSON.parse(data));
+  } else {
+    data = JSON.parse(data);
+  }
   fs.writeFileSync(file_path, JSON.stringify(data, null, 2), (err) => {
     console.log(err);
   });
@@ -38,6 +42,18 @@ app.post("/coupons", (req, res) => {
   getData = req.body;
   if (!getData.send) {
     res.json(readJSON("./public/json/coupons.json"));
+  } else {
+    console.log("Recieving");
+    console.log("writing the JSON file");
+    console.log(getData.content);
+    writeJSON("./public/json/customers.json", getData.content);
+    res.json({ status: "success" });
+  }
+});
+app.post("/mobiles", (req, res) => {
+  getData = req.body;
+  if (!getData.send) {
+    res.json(readJSON("./public/json/mobiles.json"));
   } else {
     console.log("Recieving");
     console.log("writing the JSON file");
