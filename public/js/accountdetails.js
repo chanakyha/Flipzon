@@ -41,6 +41,18 @@ if (document.cookie.includes("userid")) {
       ) {
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
+
+        $(".name").attr("readonly", true);
+        $(".email").attr("readonly", true);
+        $(".number").attr("readonly", true);
+        $(".age").attr("readonly", true);
+        $(".address").attr("readonly", true);
+
+        $(".name").val(allCustomers[i].name);
+        $(".email").val(allCustomers[i].email);
+        $(".number").val(allCustomers[i].number);
+        $(".age").val(allCustomers[i].age);
+        $(".address").val(allCustomers[i].address);
       }
     }
   });
