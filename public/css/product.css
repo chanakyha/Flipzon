@@ -170,3 +170,154 @@ ul li:hover a {
   margin: 0px 10px;
   width: 37rem;
 }
+
+/*------------------ all products page mobiles -------------*/
+
+.product-heading {
+  display: inline-block;
+  background: rgb(255, 255, 255);
+  color: black;
+  padding: 8px 100px;
+  margin: 30px 0;
+  border-radius: 40px;
+  text-align: center;
+}
+.imgad {
+  width: 1050px;
+  height: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: black;
+}
+.col-4 {
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+
+.col-4 img {
+  width: 100%;
+}
+.col-4 p {
+  font-size: 14px;
+}
+.rating .fa {
+  color: #ff523b;
+}
+
+.col-4:hover {
+  transform: translateY(-5px);
+}
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.small-container {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.row-2 {
+  justify-content: space-between;
+  margin: 100px auto 50px;
+}
+select {
+  border: 1px solid #ff523b;
+  padding: 5px;
+}
+select:focus {
+  outline: none;
+}
+.page-btn {
+  margin: 0 auto 80px;
+}
+.page-btn span {
+  display: inline-block;
+  border: 1px solid #ff523b;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.page-btn span:hover {
+  background: #ff523b;
+  color: #fff;
+}
+.link {
+  text-decoration: none;
+}
+/*------------------ single product mobile pages -------------*/
+.single-product {
+  margin-top: 80px;
+}
+
+.single-product .col-2 img {
+  padding: 0;
+}
+
+.single-product .col-2 {
+  padding: 20px;
+}
+
+.single-product .col-2 .product-price {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.single-product input {
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  border: 1px solid #ff523b;
+}
+
+input:focus {
+  outline: none;
+}
+
+.related-products {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+
+.col-2 img {
+  max-width: 100%;
+  padding: 50px 0;
+}
+.col-2 .offer-img {
+  padding: 50px;
+}
+.btn {
+  display: inline-block;
+  background: #ff523b;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #ff523b;
+}
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
