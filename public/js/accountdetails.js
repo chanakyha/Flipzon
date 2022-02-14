@@ -78,7 +78,7 @@ if (document.cookie.includes("userid")) {
         let hisCards = data[i].cards;
         let hisOrders = data[i].orders;
 
-        const addCard = (type, bank, fourDigits) => {
+        const addCard = (number, type, bank, fourDigits) => {
           html = `
           <div class="card-outer-box">
             <div class="card-container">
@@ -88,7 +88,7 @@ if (document.cookie.includes("userid")) {
                   <h4 id="card-bank">${bank}<h6><sub>with number ending in</sub></h6>
                   </h4>
                   <h1 id="card-end-number">${fourDigits}</h1>
-                  <button type="button" class="btn btn-danger remove-card">Remove <i class="fas fa-times-circle"></i></button>
+                  <button type="button" class="btn btn-danger remove-card ${number}">Remove <i class="fas fa-times-circle"></i></button>
               </div>
             </div>
           </div>`;
@@ -145,7 +145,7 @@ if (document.cookie.includes("userid")) {
                 false
               );
 
-              addCard(cardType, bankName, cardNumber.slice(12, 16));
+              addCard(cardNumber, cardType, bankName, cardNumber.slice(12, 16));
 
               $(".enter-card-number").val("");
               $(".enter-card-type").val("Select Card Type");
@@ -165,8 +165,34 @@ if (document.cookie.includes("userid")) {
           });
         });
 
-        $("button").click(() => {
-          $(this).html("Changed");
+        $(document).ready(() => {
+          $("button.remove-card").each(function () {
+            $(this).click(() => {
+              let cardNumber = $(this).attr("class").split(" ").reverse()[0];
+              console.log("Clicking");
+              for (let j = 0; j < allCustomers[i].cards.length; j++) {
+                console.log(allCustomers[i].cards[j].number.toString());
+                if (allCustomers[i].cards[j].number.toString() == cardNumber) {
+                  console.log("Record Exits");
+                  delete allCustomers[i].cards.splice(j, 1);
+                  alert(
+                    `The Card Number ending with ${cardNumber.slice(
+                      12,
+                      16
+                    )} has been removed successfully`
+                  );
+
+                  sendData(
+                    "/customers",
+                    JSON.stringify(allCustomers, null, 2),
+                    false
+                  );
+                  location.reload();
+                  break;
+                }
+              }
+            });
+          });
         });
 
         $(".join-prime").click(() => {
@@ -214,7 +240,12 @@ if (document.cookie.includes("userid")) {
         };
 
         hisCards.map((card) => {
-          addCard(card.type, card.bank, card.number.toString().slice(12, 16));
+          addCard(
+            card.number,
+            card.type,
+            card.bank,
+            card.number.toString().slice(12, 16)
+          );
         });
 
         hisOrders.map((order) => {
