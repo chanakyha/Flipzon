@@ -97,9 +97,18 @@ if (document.cookie.includes("userid")) {
         };
 
         $(".new-card-box").css("display", "none");
+        $(".close-new-card").css("display", "none");
+
+        $(".close-new-card").click(() => {
+          $(".new-card-box").css("display", "none");
+          $(".close-new-card").css("display", "none");
+          $(".new-card").css("display", "inline");
+        });
 
         $(".new-card").click(() => {
+          $(".close-new-card").css("display", "inline");
           $(".new-card-box").css("display", "block");
+          $(".new-card").css("display", "none");
           $(".add-new-card").click(() => {
             let cardNumber = $(".enter-card-number").val();
             let cardType = $(".enter-card-type").val();
