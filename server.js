@@ -24,6 +24,7 @@ const writeJSON = (file_path, data, extraData) => {
   fs.writeFileSync(file_path, JSON.stringify(data, null, 2), (err) => {
     console.log(err);
   });
+  console.log("witten");
 };
 
 app.post("/customers", (req, res) => {
@@ -34,7 +35,7 @@ app.post("/customers", (req, res) => {
     console.log("Recieving");
     console.log("writing the JSON file");
     console.log(getData.content);
-    writeJSON("./public/json/customers.json", getData.content);
+    writeJSON("./public/json/customers.json", getData.content, false);
     res.json({ status: "success" });
   }
 });

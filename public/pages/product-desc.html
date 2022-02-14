@@ -77,8 +77,8 @@
             <div class="col-2">
                 <h1 class="product-name">{}</h1>
                 <p class="product-price"><b>Price:</b> &#8377;<span class="price-product">{}</span>/-</p>
-                <input type="number" value="1" from="1">
-                <a href="" class="btn btn-success">Add To Cart</a>
+                <input type="number" class="quantity" value="1" from="1">
+                <button class="btn btn-success add-to-cart"><i class="fas fa-cart-plus"></i> Add To Cart</button>
                 <h3>Product Details</h3>
                 <p class="product-description">
                 <table class="description-product" cellpadding="4" cellspacing="5">
@@ -141,6 +141,9 @@
 
         </div>
     </div> -->
+
+    <div id="error-toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
 
 
 

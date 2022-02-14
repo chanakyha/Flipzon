@@ -19,6 +19,21 @@ const RecieveData = async (uri) => {
   const data = await response.json();
   return data;
 };
+
+const sendData = (uri, data) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: true,
+      content: data,
+    }),
+  };
+
+  fetch(uri, options).then((response) => {});
+};
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");

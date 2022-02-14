@@ -3,6 +3,8 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+let signedIn = false;
+
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
@@ -24,6 +26,7 @@ if (document.cookie.includes("userid")) {
       ) {
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
+        signedIn = true;
 
         $(".name").attr("readonly", true);
         $(".email").attr("readonly", true);
@@ -94,5 +97,50 @@ RecieveData("/mobiles").then((mobiles) => {
         mobiles[i].specs
       );
     }
+  }
+});
+
+const addToast = (id, title, message, bg) => {
+  const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
+    <div class="toast-header text-light bg-${bg}">
+      <strong class="me-auto">${title}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      ${message}
+    </div>
+  </div>`;
+
+  document.getElementById("error-toast-container").innerHTML = toastHtml;
+};
+
+$(".add-to-cart").click(() => {
+  if (!signedIn) {
+    alert("You have to login first");
+    location.href = "../pages/login.html";
+  } else {
+    $(".add-to-cart").html(`<i class="fas fa-check"></i> Added to card`);
+    $(".add-to-cart").attr("class", "add-to-cart btn btn-warning");
+    $(".add-to-cart").attr("disabled", true);
+
+    RecieveData("/customers").then((data) => {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].id.toString() == cookieUserId.replace("userid=", "")) {
+          $("#cart-items").text(data[i].cart.length + 1);
+          data1 = data;
+          console.log(data1);
+          data1[i].cart = data1[i].cart.concat([
+            {
+              id: theProduct,
+              name: $(".product-name").text(),
+              quantity: $(".quantity").val(),
+              mrp: parseFloat($(".price-product").text()),
+              coupon: false,
+            },
+          ]);
+          sendData("/customers", JSON.stringify(data1, null, 2), false);
+        }
+      }
+    });
   }
 });
