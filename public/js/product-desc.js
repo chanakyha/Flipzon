@@ -2,6 +2,7 @@
 function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
+
 //for user authentication
 if (document.cookie.includes("userid")) {
   $(".accountdetails").css("display", "block");
@@ -14,23 +15,6 @@ if (document.cookie.includes("userid")) {
   } else {
     cookieUserId = cookies[0];
   }
-
-  const RecieveData = async (uri) => {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        send: false,
-        data: undefined,
-      }),
-    };
-
-    const response = await fetch(uri, options);
-    const data = await response.json();
-    return data;
-  };
 
   RecieveData("/customers").then((data) => {
     let allCustomers = data;
@@ -67,3 +51,48 @@ document.getElementById("signout").onclick = function () {
 document.getElementById("cart").onclick = function () {
   location.href = "../pages/cart.html";
 };
+
+const getProduct = (price, name, frontImage, images, description) => {
+  let imagess = "";
+
+  for (let i = 0; i < images.length; i++) {
+    imagess += `<div class="small-img-col">
+      <img src="../img/productimg/${images[i]}" width="100%">
+    </div>`;
+  }
+
+  // description = JSON.parse(description);
+  let alldecHTML = "";
+
+  for (let i in description) {
+    alldecHTML += `
+    <tr>
+      <th>${i.toUpperCase()}</th>
+      <td>${description[i]}</td>
+    </tr>`;
+  }
+
+  $(".small-img-row").html(imagess);
+  $(".product-description").html(alldecHTML);
+  $(".price-product").text(price);
+  $(".main-mobile-img").attr("src", `../img/productimg/${frontImage}`);
+  $(".product-name").text(name);
+};
+
+!window.location.href.includes("#") &&
+  (location.href = "../pages/product.html");
+
+let theProduct = window.location.href.split("#").reverse()[0];
+RecieveData("/mobiles").then((mobiles) => {
+  for (let i = 0; i < mobiles.length; i++) {
+    if (mobiles[i].id.toString() == theProduct) {
+      getProduct(
+        mobiles[i].mrp,
+        mobiles[i].name,
+        mobiles[i].img,
+        mobiles[i].insideImages,
+        mobiles[i].specs
+      );
+    }
+  }
+});

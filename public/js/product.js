@@ -72,7 +72,7 @@ RecieveData("/mobiles").then((mobileData) => {
   const addMobile = (img, name, rating, toLink, price) => {
     let html = `
     <div class="col-4">
-      <a href="./${toLink}.html" class="link">
+      <a href="../pages/product-desc.html#${toLink}" class="phone-link-${toLink}">
           <img src="../img/productimg/${img}">
           <h4>${name}</h4>
       </a>
@@ -86,12 +86,6 @@ RecieveData("/mobiles").then((mobileData) => {
   };
 
   mobileData.map((mobile) => {
-    addMobile(
-      mobile.img,
-      mobile.name,
-      mobile.rating,
-      mobile.name.replace(" ", "-"),
-      mobile.mrp
-    );
+    addMobile(mobile.img, mobile.name, mobile.rating, mobile.id, mobile.mrp);
   });
 });

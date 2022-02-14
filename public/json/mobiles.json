@@ -18,7 +18,8 @@
       "refresh-rate": "120hz"
     },
     "mrp": 22648,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9002,
@@ -39,7 +40,8 @@
       "refresh-rate": "120hz"
     },
     "mrp": 180000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9003,
@@ -60,7 +62,13 @@
       "refresh-rate": "60hz"
     },
     "mrp": 14000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": [
+      "redmi note 10s spec 1.jpg",
+      "redmi note 10s spec 2.jpg",
+      "redmi note 10s spec 3.jpg",
+      "redmi note 10s specs img.jpg"
+    ]
   },
   {
     "id": 9004,
@@ -81,7 +89,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 16000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9005,
@@ -102,7 +111,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 14000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9006,
@@ -123,7 +133,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 37000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9007,
@@ -144,7 +155,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 15000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9008,
@@ -165,7 +177,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 60000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9009,
@@ -186,7 +199,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 87000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9010,
@@ -207,7 +221,8 @@
       "refresh-rate": "60hz"
     },
     "mrp": 40000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9011,
@@ -228,7 +243,8 @@
       "refresh-rate": "120hz"
     },
     "mrp": 52000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9012,
@@ -249,7 +265,8 @@
       "refresh-rate": "120hz"
     },
     "mrp": 15000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   },
   {
     "id": 9013,
@@ -270,6 +287,7 @@
       "refresh-rate": "90hz"
     },
     "mrp": 40000,
-    "offer-percentage": 8
+    "offer-percentage": 8,
+    "insideImages": []
   }
 ]
