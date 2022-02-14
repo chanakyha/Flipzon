@@ -321,3 +321,7 @@ input:focus {
   flex-basis: 24%;
   cursor: pointer;
 }
+
+table {
+  max-width: 20em;
+}

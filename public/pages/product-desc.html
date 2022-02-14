@@ -71,45 +71,25 @@
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img src="../img/productimg/redmi note 10s mobile page.jpg" width="100%">
-                <div class="small-img-row">
-                    <div class="small-img-col">
-                        <img src="../img/productimg/redmi note 10s specs img.jpg" width="100%">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="../img/productimg/redmi note 10s spec 1.jpg" width="100%">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="../img/productimg/redmi note 10s spec 2.jpg" width="100%">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="../img/productimg/redmi note 10s spec 3.jpg" width="100%">
-                    </div>
-                </div>
+                <img class="main-mobile-img" src="../img/productimg/redmi note 10s mobile page.jpg" width="100%">
+                <div class="small-img-row"></div>
             </div>
             <div class="col-2">
-                <h1> REDMI NOTE 10S </h1>
-                <p class="product-price"><b>Price:</b><i class="fa fa-inr"></i>14,999</p>
-                <input type="number" value="1">
-                <a href="" class="btn">Add To Cart</a>
+                <h1 class="product-name">{}</h1>
+                <p class="product-price"><b>Price:</b> &#8377;<span class="price-product">{}</span>/-</p>
+                <input type="number" value="1" from="1">
+                <a href="" class="btn btn-success">Add To Cart</a>
                 <h3>Product Details</h3>
-                <p> • Display: FHD+ (1080x2400) AMOLED Dot display; 16.33 centimeters (6.43 inch); 20:9 aspect ratio<br>
-                    • Camera: 64 MP Quad Rear camera with 8MP Ultra-wide, 2MP Macro and Portrait lens| 13 MP Front
-                    camera<br>
-                    • Processor: MediaTek Helio G95 Octa-core; 12nm process; Up to 2.05GHz clock speed<br>
-                    • Battery: 5000 mAh large battery with 33W fast charger in-box and Type-C connectivity<br>
-                    • Memory, Storage & SIM: 6GB RAM | 64GB UFS 2.2 storage expandable up to 512GB with dedicated SD
-                    card slot | Dual SIM (nano+nano) dual standby (4G+4G)<br>
-                    • Alexa Hands-Free capable: Download the Alexa app on to use Alexa hands-free. Play music, make
-                    calls, hear news, open apps, navigate, and more, using just your voice, while on-the-go. Just ask
-                    and Alexa will respond instantly.<br>
-
+                <p class="product-description">
+                <table class="description-product" cellpadding="4" cellspacing="5">
+                    <tbody class="description-product"></tbody>
+                </table>
                 </p>
 
             </div>
         </div>
     </div>
-    <div>
+    <!-- <div>
         <h2 class="related-products"> Similar Products </h2>
     </div>
     <br>
@@ -160,7 +140,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -172,6 +152,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../js/product.js"></script>
+    <script src="../js/product-desc.js"></script>
 </body>
 
 </html>
