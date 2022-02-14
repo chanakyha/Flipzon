@@ -33,7 +33,7 @@
                     </div>
                 </li>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Products</a></li>
+                <li><a href="./product.html">Products</a></li>
                 <li><a href="#">About</a></li>
                 <li id="cart" class="accountdetails"><button type="button" class="btn btn-success position-relative">
                         <i class="fas fa-cart-plus"></i>
@@ -123,54 +123,66 @@
                         <h1>Order details</h1>
                     </div>
                 </div>
-                <div class="order-outer-box">
-                    <div class="order-container">
-                        <div style="text-align: center; ">
-                            <img src="../img/order_illustration.svg" alt="order image" width="200rem">
-                            <p>Samsung Galaxy S22</p>
-                        </div>
-                        <div class="order-info">
-                            <p>Your order will be delivered by:</p>
-                            <h2>Monday, 15th April 2022</h2>
-                            <p>Your secret delivery PIN (please give only to delivery person):</p>
-                            <h3>8437</h3>
-                        </div>
-                        <div class="order-info">
-                            <p>Delivery address: </p>
-                            <h6>501, SRM ramapuram, Chennai, 400092, India</h6>
-                            <button type="button" class="btn btn-danger"> Cancel Order</button>
-                            <button type="button" class="btn btn-warning"> Change Address </button>
-                        </div>
-                    </div>
+                <div class="orders-container">
+
                 </div>
             </div>
             <!-- for profile -->
             <div id="acc-profile">
-                <h3>profile info here</h3>
-                <p> profile info Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis
-                    doloremque
-                    voluptate odio quibusdam quod tenetur similique quo deleniti vel!</p>
+                <div class="profile-outer-box">
+
+                    <div class="profile-header">
+                        <img class="avatar" src="../img/img_avatar.png" alt="avatar" width="80rem">
+                        <h1>Your Profile</h1>
+                    </div>
+
+                    <!-- creating text input for user info -->
+                    <form>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                            <input type="text" class="form-control name" placeholder="" aria-label="Name"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">E-mail</span>
+                            <input type="text" class="form-control email" placeholder="" aria-label="E-mail"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Contact</span>
+                            <span class="input-group-text" id="basic-addon1">+91</span>
+                            <input type="text" class="form-control number" placeholder="" aria-label="Contact"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupFile01">Change your avatar</label>
+                            <input type="file" class="form-control" id="inputGroupFile01">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Age</span>
+                            <input type="text" class="form-control age" placeholder="" aria-label="Age"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Address</span>
+                            <input type="text" class="form-control address" placeholder="" aria-label="Address"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <button type="reset" class="btn btn-danger"> Reset Changes</button>
+                        <button type="button" class="btn btn-success edit-profile"> Edit Profile</button>
+                        <button type="button" class="btn btn-success update-profile"> Update Profile</button>
+                    </form>
+                </div>
             </div>
             <!-- for card details -->
             <div id="acc-payment">
                 <div style="text-align: center;">
                     <h1>Your card details</h1>
                 </div>
-                <div class="card-outer-box">
-                    <!-- ========================
-                        Payment Cards container
-                    ========================= -->
-                    <div class="card-container">
-                        <img src="../img/cardsvg.svg" width="150rem">
-                        <div id="card-info">
-                            <h6 id="type">Debit card 1</h6>
-                            <h4 id="card-bank">State Bank of India Card <h6><sub>with number ending in</sub></h6>
-                            </h4>
-                            <h1 id="card-end-number">8437</h1>
-                            <button type="button" class="btn btn-warning">Change card Info</button>
-                        </div>
-                    </div>
+
+                <div class="cardbox-container">
                 </div>
+
 
             </div>
             <!-- for prime details -->
@@ -197,11 +209,14 @@
                         no additional shipping cost. What are you waiting for? Join Prime now!</h4>
                 </div>
                 <div style="text-align: center;">
-                    <button type="button" class="btn btn-info btn-lg"> Join Prime </button>
+                    <button type="button" class="btn btn-info btn-lg join-prime"> Join Prime </button>
 
                 </div>
             </div>
     </main>
+
+    <!-- Error Toast -->
+    <div id="error-toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
 
 
 

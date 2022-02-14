@@ -4,10 +4,49 @@
     "avatar": "",
     "name": "Chanakyha",
     "age": 18,
+    "address": "Chennai-600082",
     "number": "7550148119",
     "email": "vetrichanakyha2003@gmail.com",
     "password": "chan2109",
-    "cart": [],
+    "cart": [
+      {
+        "id": 9002,
+        "name": "Realme x3 Superzoom",
+        "quantity": 4,
+        "mrp": 26000,
+        "coupon": false
+      },
+      {
+        "id": 9001,
+        "name": "Iphone 11 pro max",
+        "quantity": 1,
+        "mrp": 106000,
+        "coupon": false
+      }
+    ],
+    "cards": [
+      {
+        "number": 1234567898965432,
+        "type": "Debit Card",
+        "bank": "State Bank of India",
+        "holderName": "Chan"
+      }
+    ],
+    "orders": [
+      {
+        "id": 100001,
+        "products": [
+          {
+            "id": 9002,
+            "prouctName": "Iphone 13 pro max"
+          }
+        ],
+        "deliveryDate": "Sun Feb 13 2022",
+        "pin": 8437,
+        "address": "501, SRM ramapuram, Chennai, 400092, India",
+        "status": "Dispatched"
+      }
+    ],
     "prime": false
   },
   {
@@ -15,10 +54,13 @@
     "avatar": "",
     "name": "Atharva Patil",
     "age": 18,
+    "address": "",
     "number": "999999999",
     "email": "atharva.p@gmail.com",
     "password": "atharva",
     "cart": [],
+    "cards": [],
+    "orders": [],
     "prime": true
   }
 ]

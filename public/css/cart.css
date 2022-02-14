@@ -193,18 +193,26 @@ td {
 
 th {
   background-color: var(--bs-success);
-  border-width: 20px;
 }
 
-table,
-th,
-td {
+.cart-main-table {
+  overflow: auto;
+  max-height: 16em;
+}
+.cart-main-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.cart-main-table {
   border: 3px solid black;
 }
 
-.cart-table {
-  overflow: auto;
-  max-height: 20em;
+/* Just common table stuff. Really. */
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .alert {
@@ -221,4 +229,27 @@ td {
 .alert > p {
   font-size: 4em;
   text-transform: uppercase;
+}
+
+.final-price {
+  position: fixed;
+  bottom: 0;
+  left: 50vw;
+  border: 3px solid black;
+  padding: 0.6em;
+  margin: 2em 2em 0.5em 0;
+  border-radius: 0.8em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: whitesmoke;
+}
+
+.final-price-1 {
+  color: var(--bs-danger);
+  margin-right: 12px;
+}
+
+.final-price > h3 {
+  text-align: center;
 }

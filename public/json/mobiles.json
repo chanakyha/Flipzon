@@ -1,44 +1,275 @@
 [
-    {
-      "id": 9001,
-      "mobile-name": "Realme x3 Superzoom",
-      "mobile-brand": "Realme",
-      "product-img": "x3-superzoom.jpg",
-      "specs": {
-        "display": "",
-        "processor": "",
-        "front-camera": "",
-        "rear-camera": "",
-        "ram": "",
-        "storage": "",
-        "battery-capacity": "",
-        "os": "",
-        "expandable-storage": false,
-        "dual-sim": true,
-        "refresh-rate": "120hz"
-      },
-      "mrp-price": 29000,
-      "offer-percentage": 12
+  {
+    "id": 9001,
+    "name": "Realme x3 Superzoom",
+    "mobile-brand": "Realme",
+    "img": "x3-superzoom.jpg",
+    "rating": 3,
+    "specs": {
+      "display": "120 Hz Smooth Display UIS and UIS Max Ultra Image Stabilization Liquid Cooling System",
+      "processor": "Qualcomm Snapdragon 855+",
+      "camera": "Main Camera 64 MP + Periscope 8 MP + Wide Angle 8 MP + Macro 2 MP, Main Camera - 1/1.72, 0.8 um, Periscope - 1/4.4, 1.008 um, Wide Angle - 1/4, 1.12 um, Macro - 1/5, 1.75 um, Sensor Type: COB + COB + COB + CSP",
+      "ram": "8 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4200 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
     },
-    {
-      "id": 9002,
-      "mobile-name": "Iphone 13 pro max",
-      "mobile-brand": "Apple",
-      "product-img": "iphone.png",
-      "specs": {
-        "display": "",
-        "processor": "",
-        "front-camera": "",
-        "rear-camera": "",
-        "ram": "",
-        "storage": "",
-        "battery-capacity": "",
-        "os": "",
-        "expandable-storage": false,
-        "dual-sim": true,
-        "refresh-rate": "120hz"
-      },
-      "mrp-price": 129000,
-      "offer-percentage": 12
-    }
-  ]
+    "mrp": 22648,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9002,
+    "name": "iPhone 13 Pro Max",
+    "mobile-brand": "Apple",
+    "img": "iphone-13-pro-max-blue-select.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.7-inch (17 cm diagonal) Super Retina XDR display with ProMotion",
+      "processor": "A15 Bionic chip with 6-core CPU (2 performance and 4 efficiency cores), 5-core GPU, and 16-core Neural Engine",
+      "camera": "Pro 12MP camera system (Ultra Wide, Wide, and Telephoto)",
+      "ram": "6 GB RAM",
+      "storage": "512 GB ROM",
+      "battery-capacity": "3095 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 180000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9003,
+    "name": "Redmi Note 10S",
+    "mobile-brand": "Xiaomi",
+    "img": "redmi note 10s mobile page.jpg",
+    "rating": 3,
+    "specs": {
+      "display": "FHD+ 1080x2400 AMOLED Dot display; 16.33 centimeters 6.43 inch; 20:9 aspect ratio",
+      "processor": "MediaTek Helio G95 Octa-core; 12nm process; Up to 2.05GHz clock speed",
+      "camera": "64 MP Quad Rear camera with 8MP Ultra-wide, 2MP Macro and Portrait lens 13 MP Front camera",
+      "ram": "6GB RAM",
+      "storage": "64GB UFS 2.2 storage expandable up to 512GB with dedicated SD card slot",
+      "battery-capacity": "5000 mAh large battery with 33W fast charger in-box and Type-C connectivity",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 14000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9004,
+    "name": "Galaxy M31",
+    "mobile-brand": "Samsung",
+    "img": "samsung galaxy M31 mobile page.jpeg",
+    "rating": 4,
+    "specs": {
+      "display": "6.4-inch(16.21 centimeters) Super Amoled - Infinity U Cut Display , FHD+ Resolution (2340 x 1080) , 404 ppi pixel density and 16M color support",
+      "processor": "Exynos 9611 Octa core processor , 8GB RAM, 128GB internal memory expandable up to 512GB and dual SIM",
+      "camera": "Quad Rear Camera (64 MP + 8 MP + 5 MP + 5 MP) | 32 MP Front Camera",
+      "ram": "8 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "6000 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 16000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9005,
+    "name": "Realme 8",
+    "mobile-brand": "Realme",
+    "img": "realme 8 mob page.jpg",
+    "rating": 4,
+    "specs": {
+      "display": "16.26 cm (6.4 inch) Full HD+ Display",
+      "processor": "MediaTek Helio P60 (MT6771)",
+      "camera": "64MP + 8MP + 2MP + 2MP | 16MP Front Camera",
+      "ram": "4 GB RAM",
+      "storage": "128 GB ROM | Expandable Upto 256 GB",
+      "battery-capacity": "5000 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 14000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9006,
+    "name": "iPhone SE 2020",
+    "mobile-brand": "Apple",
+    "img": "iphone-se-white-select-2020.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "4.7-inch Retina HD display",
+      "processor": "A13 Bionic chip with third-generation Neural Engine",
+      "camera": "12MP Wide camera; Portrait mode, Portrait Lighting, Depth Control, next-generation Smart HDR, and 4K video",
+      "ram": "4 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "3500 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 37000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9007,
+    "name": "Realme 6",
+    "mobile-brand": "Realme",
+    "img": "realme-6 mobile page.jpg",
+    "rating": 3,
+    "specs": {
+      "display": "16.51 cm (6.5 inch) Full HD+ Display",
+      "processor": "MediaTek Helio G90T Processor",
+      "camera": "64MP + 8MP + 2MP + 2MP | 16MP Front Camera",
+      "ram": "6 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "4300 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 15000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9008,
+    "name": "iPhone12",
+    "mobile-brand": "Apple",
+    "img": "iphone12.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.1-inch (15.5 cm diagonal) Super Retina XDR display",
+      "processor": "A14 Bionic chip, the fastest chip ever in a smartphone",
+      "camera": "Advanced dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Deep Fusion, Smart HDR 3, 4K Dolby Vision HDR recording",
+      "ram": "4 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "4300 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 60000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9009,
+    "name": "iPhone 13",
+    "mobile-brand": "Apple",
+    "img": "iphone13.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "15 cm (6.1-inch) Super Retina XDR display",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "camera": "Advanced dual-camera system with 12MP Wide and Ultra Wide cameras; Photographic Styles, Smart HDR 4, Night mode, 4K Dolby Vision HDR recording",
+      "ram": "6 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4500 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 87000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9010,
+    "name": "iPhone11",
+    "mobile-brand": "Apple",
+    "img": "iphone11.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.1-inch (15.4 cm diagonal) Liquid Retina HD LCD display",
+      "processor": "A13 Bionic chip with third-generation Neural Engine",
+      "camera": "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+      "ram": "6 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4000 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 40000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9011,
+    "name": "Galaxy S22",
+    "mobile-brand": "Samsung",
+    "img": "s21.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "(6.2-inch) Dynamic AMOLED 2X Display, FHD+ resolution with 2400 X 1080 pixels resolution, 421 PPI with 16M colours",
+      "processor": " 2.9GHz Exynos 2100 octa core processor",
+      "camera": "Triple rear camera setup- Main Camera 12MP Dual Pixel + Ultra Wide 12MP Camera + Tele1 3X 64MP Camera | 10MP front Dual Pixel Camera",
+      "ram": "6 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4000mAH lithium-ion battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 52000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9012,
+    "name": "Galaxy M52",
+    "mobile-brand": "Samsung",
+    "img": "m52.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "16.95 centimeters (6.7-inch) Super AMOLED Plus- Infinity O display, FHD+ resolution 1080 x 2400 (FHD+) pixels protected by Gorilla Glass 5",
+      "processor": "Qualcomm SDM 778G Octa Core 2.4GHz,1.8GHz Processor with the 11 band support for a True 5G experience",
+      "camera": "Triple camera setup-64MP (F 1.8) main camera + 12MP (F2.2) Ultra wide camera+ 5MP (F2.4) depth camera 32MP (F2.2) front camera",
+      "ram": "8 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "5000 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 15000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9013,
+    "name": "Galaxy A52",
+    "mobile-brand": "Samsung",
+    "img": "a52.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.5 Super AMOLED, 90Hz, 800 nits, 1080 x 2400 (FHD+)",
+      "processor": "Qualcomm SM7125 Snapdragon 720G (8 nm), Octa-core, Adreno 618, Android 11, One UI 3.1",
+      "camera": "Rear Camera: 64MP, f/1.8 + 12MP, f/2.2 + 5MP, f/2.4 + 5MP, f/2.4, Front Camera: 32MP, f/2.2",
+      "ram": "8 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4500 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "90hz"
+    },
+    "mrp": 40000,
+    "offer-percentage": 8
+  }
+]

@@ -32,8 +32,8 @@
                         <input type="text" placeholder="Search..">
                     </div>
                 </li>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="#">Products</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="./product.html">Products</a></li>
                 <li><a href="#">About</a></li>
                 <li id="cart" class="accountdetails"><button type="button" class="btn btn-success position-relative">
                         <i class="fas fa-cart-plus"></i>
@@ -73,22 +73,59 @@
     </div>
 
     <div class="cart-table">
-        <table class="table-bordered">
-            <tr>
-                <th>S.No</th>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>More Details</th>
-                <th>Quantity</th>
-                <th>Price for 1</th>
-                <th>Coupon</th>
-                <th>Final Price</th>
-            </tr>
-            <tbody class="cart-table-body">
+        <div class="cart-main-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>More Details</th>
+                        <th>Quantity</th>
+                        <th>Price for 1</th>
+                        <th>Final Price</th>
+                    </tr>
+                </thead>
+                <tbody class="cart-table-body">
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="final-price">
+            <h3>Total</h3>
+            <hr>
+            <table>
+                <tr>
+                    <td><b>Total Above Price: </b></td>
+                    <td><span class="total-mrp"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Coupon TAG: </b></td>
+                    <td><input class="coupon-tag entered-coupon"></input>
+                        <input type="submit" class="btn btn-success apply-coupon" value="Apply">
+                        <button class="btn btn-danger remove-coupon">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Price Reduced: </b></td>
+                    <td><span class="price-reduced"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Tax: </b></td>
+                    <td><span class="tax-percentage"></span></td>
+                </tr>
+                <tr>
+                    <td><b>Final Price: </b></td>
+                    <td><span class="final-price-1"></span><button class="btn btn-success">Proceed to Payment</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast-container" class="toast-container position-absolute top-0 end-0 p-3"></div>
 
 
     <!-- Booststrap Js -->
