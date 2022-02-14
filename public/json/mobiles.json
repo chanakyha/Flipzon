@@ -19,7 +19,7 @@
     },
     "mrp": 22648,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["x3superzoom_side.jpeg", "x3superzoom_side2.jpeg"]
   },
   {
     "id": 9002,
@@ -41,7 +41,7 @@
     },
     "mrp": 180000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["13promax_side.jpeg", "13promax_side2.jpeg"]
   },
   {
     "id": 9003,
@@ -90,7 +90,7 @@
     },
     "mrp": 16000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["m31_side.jpeg"]
   },
   {
     "id": 9005,
@@ -112,7 +112,7 @@
     },
     "mrp": 14000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["realme8_side.jpeg", "realme8_side2.jpeg"]
   },
   {
     "id": 9006,
@@ -134,7 +134,7 @@
     },
     "mrp": 37000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["se_side.jpeg", "se_side2.jpeg"]
   },
   {
     "id": 9007,
@@ -156,7 +156,7 @@
     },
     "mrp": 15000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["realme6_side.jpeg", "realme6_side2.jpeg"]
   },
   {
     "id": 9008,
@@ -178,7 +178,7 @@
     },
     "mrp": 60000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["12_side.jpeg", "12_side2.jpeg"]
   },
   {
     "id": 9009,
@@ -200,7 +200,7 @@
     },
     "mrp": 87000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["13_side.jpeg", "13_side2.jpeg"]
   },
   {
     "id": 9010,
@@ -222,11 +222,11 @@
     },
     "mrp": 40000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["11_side.jpeg", "11_side2.jpeg"]
   },
   {
     "id": 9011,
-    "name": "Galaxy S22",
+    "name": "Galaxy S21",
     "mobile-brand": "Samsung",
     "img": "s21.jpg",
     "rating": 5,
@@ -244,7 +244,7 @@
     },
     "mrp": 52000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["s21_side.jpeg", "s21_side2.jpeg"]
   },
   {
     "id": 9012,
@@ -266,7 +266,7 @@
     },
     "mrp": 15000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["m52_side.jpeg", "m52_side2.jpeg"]
   },
   {
     "id": 9013,
@@ -288,6 +288,6 @@
     },
     "mrp": 40000,
     "offer-percentage": 8,
-    "insideImages": []
+    "insideImages": ["a52_side.jpeg", "a52_side2.jpeg"]
   }
 ]
