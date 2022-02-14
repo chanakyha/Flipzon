@@ -20,4 +20,25 @@
       "mrp": 22648,
       "offer-percentage": 8
     }
+    {
+      "id": 9002,
+      "name": "iPhone 13 Pro Max",
+      "mobile-brand": "Appl",
+      "img": "iphone-13-pro-max-blue-select.jpg",
+      "rating": 5,
+      "specs": {
+        "display": "6.7-inch (17 cm diagonal) Super Retina XDR display with ProMotion",
+        "processor": "A15 Bionic chip with 6-core CPU (2 performance and 4 efficiency cores), 5-core GPU, and 16-core Neural Engine",
+        "camera": "Pro 12MP camera system (Ultra Wide, Wide, and Telephoto)",
+        "ram": "6 GB RAM",
+        "storage": "512 GB ROM",
+        "battery-capacity": "3095 mAh Battery",
+        "os": "iOS",
+        "expandable-storage": false,
+        "dual-sim": true,
+        "refresh-rate": "120hz"
+      },
+      "mrp": 22648,
+      "offer-percentage": 8
+    }
   ]
