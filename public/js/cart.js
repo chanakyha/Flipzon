@@ -3,6 +3,21 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+const sendData = (uri, data) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      send: true,
+      content: data,
+    }),
+  };
+
+  fetch(uri, options);
+};
+
 const RecieveData = async (uri) => {
   const options = {
     method: "POST",
@@ -76,12 +91,14 @@ if (document.cookie.includes("userid")) {
               <td>${i + 1}</td>
               <td>${cartDetailsId[i].id}</td>
               <td>${cartDetailsId[i].name}</td>
-              <td><a href="#">More Details...</a></td>
               <td>x${cartDetailsId[i].quantity}</td>
               <td>${toIndianRuppe(cartDetailsId[i].mrp)}</td>
               <td>${toIndianRuppe(
                 cartDetailsId[i].mrp * cartDetailsId[i].quantity
               )}</td>
+              <td><button class="btn btn-danger remove-cart-item ${
+                cartDetailsId[i].id
+              }">Remove <i class="fad fa-times-circle"></i></button> </td>
             </tr>`;
             totalPrice += cartDetailsId[i].mrp * cartDetailsId[i].quantity;
           }
@@ -123,6 +140,28 @@ if (document.cookie.includes("userid")) {
                   $("#coupon-error").toast("show");
                 }
               }
+            });
+          });
+
+          $(document).ready(() => {
+            $("button.remove-cart-item").each(function () {
+              $(this).click(() => {
+                let productId = $(this).attr("class").split(" ").reverse()[0];
+
+                for (let j = 0; j < allCustomers[i].cart.length; j++) {
+                  if (productId == allCustomers[i].cart[j].id.toString()) {
+                    allCustomers[i].cart.splice(j, 1);
+                    alert("Deleted an item");
+                    sendData(
+                      "/customers",
+                      JSON.stringify(allCustomers, null, 2),
+                      false
+                    );
+                    location.reload();
+                    break;
+                  }
+                }
+              });
             });
           });
 
