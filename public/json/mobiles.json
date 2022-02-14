@@ -23,7 +23,7 @@
   {
     "id": 9002,
     "name": "iPhone 13 Pro Max",
-    "mobile-brand": "Appl",
+    "mobile-brand": "Apple",
     "img": "iphone-13-pro-max-blue-select.jpg",
     "rating": 5,
     "specs": {
@@ -38,7 +38,91 @@
       "dual-sim": true,
       "refresh-rate": "120hz"
     },
-    "mrp": 22648,
+    "mrp": 180000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9003,
+    "name": "Redmi Note 10S",
+    "mobile-brand": "Xiaomi",
+    "img": "redmi note 10s mobile page.jpg",
+    "rating": 3,
+    "specs": {
+      "display": "FHD+ 1080x2400 AMOLED Dot display; 16.33 centimeters 6.43 inch; 20:9 aspect ratio",
+      "processor": "MediaTek Helio G95 Octa-core; 12nm process; Up to 2.05GHz clock speed",
+      "camera": "64 MP Quad Rear camera with 8MP Ultra-wide, 2MP Macro and Portrait lens 13 MP Front camera",
+      "ram": "6GB RAM",
+      "storage": "64GB UFS 2.2 storage expandable up to 512GB with dedicated SD card slot",
+      "battery-capacity": "5000 mAh large battery with 33W fast charger in-box and Type-C connectivity",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 14000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9004,
+    "name": "Galaxy M31",
+    "mobile-brand": "Samsung",
+    "img": "samsung galaxy M31 mobile page.jpeg",
+    "rating": 4,
+    "specs": {
+      "display": "6.4-inch(16.21 centimeters) Super Amoled - Infinity U Cut Display , FHD+ Resolution (2340 x 1080) , 404 ppi pixel density and 16M color support",
+      "processor": "Exynos 9611 Octa core processor , 8GB RAM, 128GB internal memory expandable up to 512GB and dual SIM",
+      "camera": "Quad Rear Camera (64 MP + 8 MP + 5 MP + 5 MP) | 32 MP Front Camera",
+      "ram": "8 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "6000 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 16000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9005,
+    "name": "Realme 8",
+    "mobile-brand": "Realme",
+    "img": "realme 8 mob page.jpg",
+    "rating": 4,
+    "specs": {
+      "display": "16.26 cm (6.4 inch) Full HD+ Display",
+      "processor": "MediaTek Helio P60 (MT6771)",
+      "camera": "64MP + 8MP + 2MP + 2MP | 16MP Front Camera",
+      "ram": "4 GB RAM",
+      "storage": "128 GB ROM | Expandable Upto 256 GB",
+      "battery-capacity": "5000 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 14000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9006,
+    "name": "iPhone SE 2020",
+    "mobile-brand": "Apple",
+    "img": "iphone-se-white-select-2020.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "4.7-inch Retina HD display",
+      "processor": "A13 Bionic chip with third-generation Neural Engine",
+      "camera": "12MP Wide camera; Portrait mode, Portrait Lighting, Depth Control, next-generation Smart HDR, and 4K video",
+      "ram": "4 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "3500 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 37000,
     "offer-percentage": 8
   }
 ]
