@@ -124,5 +124,152 @@
     },
     "mrp": 37000,
     "offer-percentage": 8
+  },
+  {
+    "id": 9007,
+    "name": "Realme 6",
+    "mobile-brand": "Realme",
+    "img": "realme-6 mobile page.jpg",
+    "rating": 3,
+    "specs": {
+      "display": "16.51 cm (6.5 inch) Full HD+ Display",
+      "processor": "MediaTek Helio G90T Processor",
+      "camera": "64MP + 8MP + 2MP + 2MP | 16MP Front Camera",
+      "ram": "6 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "4300 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 15000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9008,
+    "name": "iPhone12",
+    "mobile-brand": "Apple",
+    "img": "iphone12.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.1-inch (15.5 cm diagonal) Super Retina XDR display",
+      "processor": "A14 Bionic chip, the fastest chip ever in a smartphone",
+      "camera": "Advanced dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Deep Fusion, Smart HDR 3, 4K Dolby Vision HDR recording",
+      "ram": "4 GB RAM",
+      "storage": "64 GB ROM",
+      "battery-capacity": "4300 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 60000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9009,
+    "name": "iPhone 13",
+    "mobile-brand": "Apple",
+    "img": "iphone13.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "15 cm (6.1-inch) Super Retina XDR display",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "camera": "Advanced dual-camera system with 12MP Wide and Ultra Wide cameras; Photographic Styles, Smart HDR 4, Night mode, 4K Dolby Vision HDR recording",
+      "ram": "6 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4500 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 87000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9010,
+    "name": "iPhone11",
+    "mobile-brand": "Apple",
+    "img": "iphone11.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.1-inch (15.4 cm diagonal) Liquid Retina HD LCD display",
+      "processor": "A13 Bionic chip with third-generation Neural Engine",
+      "camera": "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+      "ram": "6 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4000 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "60hz"
+    },
+    "mrp": 40000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9011,
+    "name": "Galaxy S22",
+    "mobile-brand": "Samsung",
+    "img": "s21.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "(6.2-inch) Dynamic AMOLED 2X Display, FHD+ resolution with 2400 X 1080 pixels resolution, 421 PPI with 16M colours",
+      "processor": " 2.9GHz Exynos 2100 octa core processor",
+      "camera": "Triple rear camera setup- Main Camera 12MP Dual Pixel + Ultra Wide 12MP Camera + Tele1 3X 64MP Camera | 10MP front Dual Pixel Camera",
+      "ram": "6 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4000mAH lithium-ion battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 52000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9012,
+    "name": "Galaxy M52",
+    "mobile-brand": "Samsung",
+    "img": "m52.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "16.95 centimeters (6.7-inch) Super AMOLED Plus- Infinity O display, FHD+ resolution 1080 x 2400 (FHD+) pixels protected by Gorilla Glass 5",
+      "processor": "Qualcomm SDM 778G Octa Core 2.4GHz,1.8GHz Processor with the 11 band support for a True 5G experience",
+      "camera": "Triple camera setup-64MP (F 1.8) main camera + 12MP (F2.2) Ultra wide camera+ 5MP (F2.4) depth camera 32MP (F2.2) front camera",
+      "ram": "8 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "5000 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 15000,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9013,
+    "name": "Galaxy A52",
+    "mobile-brand": "Samsung",
+    "img": "a52.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.5 Super AMOLED, 90Hz, 800 nits, 1080 x 2400 (FHD+)",
+      "processor": "Qualcomm SM7125 Snapdragon 720G (8 nm), Octa-core, Adreno 618, Android 11, One UI 3.1",
+      "camera": "Rear Camera: 64MP, f/1.8 + 12MP, f/2.2 + 5MP, f/2.4 + 5MP, f/2.4, Front Camera: 32MP, f/2.2",
+      "ram": "8 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4500 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "90hz"
+    },
+    "mrp": 40000,
+    "offer-percentage": 8
   }
 ]
