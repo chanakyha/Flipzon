@@ -1,23 +1,44 @@
 [
-    {
-      "id": 9001,
-      "name": "Realme x3 Superzoom",
-      "mobile-brand": "Realme",
-      "img": "x3-superzoom.jpg",
-      "rating": 3,
-      "specs": {
-        "display": "120 Hz Smooth Display UIS and UIS Max Ultra Image Stabilization Liquid Cooling System",
-        "processor": "Qualcomm Snapdragon 855+",
-        "camera": "Main Camera 64 MP + Periscope 8 MP + Wide Angle 8 MP + Macro 2 MP, Main Camera - 1/1.72, 0.8 um, Periscope - 1/4.4, 1.008 um, Wide Angle - 1/4, 1.12 um, Macro - 1/5, 1.75 um, Sensor Type: COB + COB + COB + CSP",
-        "ram": "8 GB RAM",
-        "storage": "128 GB ROM",
-        "battery-capacity": "4200 mAh Battery",
-        "os": "Android",
-        "expandable-storage": false,
-        "dual-sim": true,
-        "refresh-rate": "120hz"
-      },
-      "mrp": 22648,
-      "offer-percentage": 8
-    }
-  ]
+  {
+    "id": 9001,
+    "name": "Realme x3 Superzoom",
+    "mobile-brand": "Realme",
+    "img": "x3-superzoom.jpg",
+    "rating": 3,
+    "specs": {
+      "display": "120 Hz Smooth Display UIS and UIS Max Ultra Image Stabilization Liquid Cooling System",
+      "processor": "Qualcomm Snapdragon 855+",
+      "camera": "Main Camera 64 MP + Periscope 8 MP + Wide Angle 8 MP + Macro 2 MP, Main Camera - 1/1.72, 0.8 um, Periscope - 1/4.4, 1.008 um, Wide Angle - 1/4, 1.12 um, Macro - 1/5, 1.75 um, Sensor Type: COB + COB + COB + CSP",
+      "ram": "8 GB RAM",
+      "storage": "128 GB ROM",
+      "battery-capacity": "4200 mAh Battery",
+      "os": "Android",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 22648,
+    "offer-percentage": 8
+  },
+  {
+    "id": 9002,
+    "name": "iPhone 13 Pro Max",
+    "mobile-brand": "Appl",
+    "img": "iphone-13-pro-max-blue-select.jpg",
+    "rating": 5,
+    "specs": {
+      "display": "6.7-inch (17 cm diagonal) Super Retina XDR display with ProMotion",
+      "processor": "A15 Bionic chip with 6-core CPU (2 performance and 4 efficiency cores), 5-core GPU, and 16-core Neural Engine",
+      "camera": "Pro 12MP camera system (Ultra Wide, Wide, and Telephoto)",
+      "ram": "6 GB RAM",
+      "storage": "512 GB ROM",
+      "battery-capacity": "3095 mAh Battery",
+      "os": "iOS",
+      "expandable-storage": false,
+      "dual-sim": true,
+      "refresh-rate": "120hz"
+    },
+    "mrp": 22648,
+    "offer-percentage": 8
+  }
+]
