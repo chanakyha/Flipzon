@@ -85,6 +85,7 @@ if (document.cookie.includes("userid")) {
         } else {
           let totalPrice = 0;
           let htmlTable = "";
+          let finalPrice = 0;
           let cartDetailsId = allCustomers[i].cart;
           for (let i = 0; i < cartDetailsId.length; i++) {
             htmlTable += `<tr>
@@ -125,6 +126,7 @@ if (document.cookie.includes("userid")) {
                   $(".final-price-1").html(
                     toIndianRuppe((5 / 100) * totalPrice + totalPrice)
                   );
+                  finalPrice = (5 / 100) * totalPrice + totalPrice;
                   $(".apply-coupon").css("display", "none");
                   $(".remove-coupon").css("display", "inline");
                   foundCoupon = true;
@@ -141,6 +143,65 @@ if (document.cookie.includes("userid")) {
                 }
               }
             });
+          });
+
+          $(".proceed-payment").click(() => {
+            let cardsHtml = ``;
+            for (let x = 0; x < allCustomers[i].cards.length; x++) {
+              cardsHtml += `
+              <option value="${allCustomers[i].cards[x].number}">${
+                allCustomers[i].cards[x].type
+              }: XX ${allCustomers[i].cards[x].number
+                .toString()
+                .slice(12, 16)}</option>
+              `;
+            }
+
+            $(".checkout-pay").click(() => {
+              let Name = $("#NameOnCard").val();
+              let CardNumber = $("#CardNumber").val();
+              let Expiry = $("#ExpiryDate").val();
+              let CVV = $("#SecurityCode").val();
+              let zipcode = $("#ZIPCode").val();
+
+              if (!Name || !CardNumber || !Expiry || !CVV || !zipcode) {
+                addToast(
+                  "checkout-error",
+                  "You Have Blank Fields",
+                  "Please enter all the fiels in order to checkout",
+                  "danger"
+                );
+                $("#checkout-error").toast("show");
+              } else {
+                console.log("Checkout Done");
+              }
+            });
+
+            $(".saved-cards-display").on("change", (e) => {
+              if ($(".saved-cards-display").val() == "none") {
+                $("#NameOnCard").val("");
+                $("#CardNumber").val("");
+              } else {
+                for (let x = 0; x < allCustomers[i].cards.length; x++) {
+                  if (
+                    $(".saved-cards-display").val() ==
+                    allCustomers[i].cards[x].number.toString()
+                  ) {
+                    $("#NameOnCard").val(allCustomers[i].cards[x].holderName);
+                    $("#CardNumber").val(allCustomers[i].cards[x].number);
+                    break;
+                  }
+                }
+              }
+            });
+
+            $(".add-card-above").click();
+
+            $("#final-price-modal").html(toIndianRuppe(finalPrice));
+            $(".saved-cards-display").html(
+              $(".saved-cards-display").html() + cardsHtml
+            );
+            $("#PaymentModal").modal("show");
           });
 
           $(document).ready(() => {
@@ -176,6 +237,7 @@ if (document.cookie.includes("userid")) {
             $(".entered-coupon").attr("disabled", false);
             $(".apply-coupon").css("display", "inline");
             $(".remove-coupon").css("display", "none");
+            finalPrice = (5 / 100) * totalPrice + totalPrice;
           });
 
           $(".cart-table-body").html(htmlTable);
@@ -187,6 +249,8 @@ if (document.cookie.includes("userid")) {
           );
 
           console.log(totalPrice);
+
+          finalPrice = (5 / 100) * totalPrice + totalPrice;
         }
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;

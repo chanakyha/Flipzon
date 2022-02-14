@@ -117,7 +117,8 @@
                 </tr>
                 <tr>
                     <td><b>Final Price: </b></td>
-                    <td><span class="final-price-1"></span><button class="btn btn-success">Proceed to Payment</button>
+                    <td><span class="final-price-1"></span><button class="btn btn-success proceed-payment">Proceed to
+                            Payment</button>
                     </td>
                 </tr>
             </table>
@@ -126,7 +127,84 @@
 
     <!-- Error Toast -->
     <div id="error-toast-container" class="toast-container position-absolute top-0 end-0 p-3"></div>
-
+    <!-- Payment Modal -->
+    <div class="modal fade" id="PaymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="PaymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PaymentModalLabel">Payment Portal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="Checkout" class="inline">
+                        <div class="card-row">
+                            <span class="visa"></span>
+                            <span class="mastercard"></span>
+                            <span class="amex"></span>
+                            <span class="discover"></span>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="PaymentAmount">Payment amount</label>
+                                <div class="amount-placeholder">
+                                    <span id="final-price-modal">500.00</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label or="NameOnCard">Name on card</label>
+                                <input id="NameOnCard" class="form-control" type="text" maxlength="255"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="CardNumber">Card number</label>
+                                <input id="CardNumber" class="null card-image form-control" type="text"></input>
+                            </div>
+                            <div class="expiry-date-group form-group">
+                                <label for="ExpiryDate">Expiry date</label>
+                                <input id="ExpiryDate" class="form-control" type="text" placeholder="MM / YY"
+                                    maxlength="7"></input>
+                            </div>
+                            <div class="security-code-group form-group">
+                                <label for="SecurityCode">Security code</label>
+                                <div class="input-container">
+                                    <input id="SecurityCode" class="form-control" type="text"></input>
+                                    <i id="cvc" class="fa fa-question-circle"></i>
+                                </div>
+                                <div class="cvc-preview-container two-card hide">
+                                    <div class="amex-cvc-preview"></div>
+                                    <div class="visa-mc-dis-cvc-preview"></div>
+                                </div>
+                            </div>
+                            <div class="zip-code-group form-group">
+                                <label for="ZIPCode">ZIP/Postal code</label>
+                                <div class="input-container">
+                                    <input id="ZIPCode" class="form-control" type="text" maxlength="10"></input>
+                                    <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
+                                        data-placement="left"
+                                        data-content="Enter the ZIP/Postal code for your credit card billing address."><i
+                                            class="fa fa-question-circle"></i></a>
+                                </div>
+                            </div>
+                            <p><b>
+                                    <center>OR</center>
+                                </b></p>
+                            <div class="zip-code-group form-group">
+                                <label for="useCard">Use Saved Card</label>
+                                <div class="input-container input-group">
+                                    <select class="form-select saved-cards-display">
+                                        <option value="none" selected>Select the Card</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="width:100%" class="btn btn-success checkout-pay">Pay</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Booststrap Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

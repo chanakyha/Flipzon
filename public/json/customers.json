@@ -8,7 +8,15 @@
     "number": "7550148119",
     "email": "vetrichanakyha2003@gmail.com",
     "password": "chan2109",
-    "cart": [],
+    "cart": [
+      {
+        "id": "9001",
+        "name": "Realme x3 Superzoom",
+        "quantity": "1",
+        "mrp": 22648,
+        "coupon": false
+      }
+    ],
     "cards": [
       {
         "number": 1234567898965432,

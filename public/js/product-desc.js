@@ -64,7 +64,6 @@ const getProduct = (price, name, frontImage, images, description) => {
     </div>`;
   }
 
-  // description = JSON.parse(description);
   let alldecHTML = "";
 
   for (let i in description) {
