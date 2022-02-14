@@ -114,6 +114,23 @@ const addToast = (id, title, message, bg) => {
   document.getElementById("error-toast-container").innerHTML = toastHtml;
 };
 
+RecieveData("/customers").then((customers) => {
+  for (let i = 0; i < customers.length; i++) {
+    if (customers[i].id.toString() == cookieUserId.replace("userid=", "")) {
+      for (let j = 0; j < customers[i].cart.length; j++) {
+        if (customers[i].cart[j].id.toString() == theProduct) {
+          $(".add-to-cart").html(`<i class="fas fa-check"></i> Added to card`);
+          $(".add-to-cart").attr("class", "add-to-cart btn btn-warning");
+          $(".add-to-cart").attr("disabled", true);
+          break;
+        }
+      }
+
+      break;
+    }
+  }
+});
+
 $(".add-to-cart").click(() => {
   if (!signedIn) {
     alert("You have to login first");
@@ -122,7 +139,6 @@ $(".add-to-cart").click(() => {
     $(".add-to-cart").html(`<i class="fas fa-check"></i> Added to card`);
     $(".add-to-cart").attr("class", "add-to-cart btn btn-warning");
     $(".add-to-cart").attr("disabled", true);
-
     RecieveData("/customers").then((data) => {
       for (let i = 0; i < data.length; i++) {
         if (data[i].id.toString() == cookieUserId.replace("userid=", "")) {
