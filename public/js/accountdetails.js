@@ -3,6 +3,20 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+const addToast = (id, title, message, bg) => {
+  const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
+    <div class="toast-header text-light bg-${bg}">
+      <strong class="me-auto">${title}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      ${message}
+    </div>
+  </div>`;
+
+  document.getElementById("error-toast-container").innerHTML = toastHtml;
+};
+
 const sendData = (uri, data) => {
   const options = {
     method: "POST",
@@ -34,31 +48,6 @@ const RecieveData = async (uri) => {
   const data = await response.json();
   return data;
 };
-
-const addToast = (id, title, message, bg) => {
-  const toastHtml = `<div class="toast" id="${id}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3500">
-    <div class="toast-header text-light bg-${bg}">
-      <strong class="me-auto">${title}</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      ${message}
-    </div>
-  </div>`;
-
-  document.getElementById("error-toast-container").innerHTML = toastHtml;
-};
-
-$(".join-prime").click(() => {
-  addToast(
-    "joined-prime",
-    "Unlocked Prime",
-    "<b>Thank you for joining the prime membership, Level Up ++</b>",
-    "info"
-  );
-
-  $("#joined-prime").toast("show");
-});
 
 //for user authentication
 if (document.cookie.includes("userid")) {
@@ -99,13 +88,103 @@ if (document.cookie.includes("userid")) {
                   <h4 id="card-bank">${bank}<h6><sub>with number ending in</sub></h6>
                   </h4>
                   <h1 id="card-end-number">${fourDigits}</h1>
-                  <button type="button" class="btn btn-warning">Change card Info</button>
+                  <button type="button" class="btn btn-danger remove-card">Remove <i class="fas fa-times-circle"></i></button>
               </div>
             </div>
           </div>`;
 
           $(".cardbox-container").html($(".cardbox-container").html() + html);
         };
+
+        $(".new-card-box").css("display", "none");
+
+        $(".new-card").click(() => {
+          $(".new-card-box").css("display", "block");
+          $(".add-new-card").click(() => {
+            let cardNumber = $(".enter-card-number").val();
+            let cardType = $(".enter-card-type").val();
+            let bankName = $(".enter-bank-name").val();
+            let holderName = $(".enter-holder-name").val();
+
+            if (
+              !cardNumber ||
+              cardType == "Select Card Type" ||
+              !bankName ||
+              !holderName
+            ) {
+              addToast(
+                "card-error",
+                "Blank Fields",
+                "<b>Some of the fields are left blank please enter it</b>",
+                "danger"
+              );
+
+              $("#card-error").toast("show");
+            } else if (cardNumber.length != 16) {
+              addToast(
+                "card-number-error",
+                "Invalid Card",
+                "<b>The Card Number you have entered is invalid</b>",
+                "danger"
+              );
+
+              $("#card-number-error").toast("show");
+            } else {
+              allCustomers[i].cards = allCustomers[i].cards.concat([
+                {
+                  number: parseInt(cardNumber),
+                  type: cardType,
+                  bank: bankName,
+                  holderName: holderName,
+                },
+              ]);
+
+              sendData(
+                "/customers",
+                JSON.stringify(allCustomers, null, 2),
+                false
+              );
+
+              addCard(cardType, bankName, cardNumber.slice(12, 16));
+
+              $(".enter-card-number").val("");
+              $(".enter-card-type").val("Select Card Type");
+              $(".enter-bank-name").val("");
+              $(".enter-holder-name").val("");
+              $(".new-card-box").css("display", "none");
+
+              addToast(
+                "success-card-added",
+                "Card Added",
+                "<b>Your Card is successfully added",
+                "success"
+              );
+
+              $("#success-card-added").toast("show");
+            }
+          });
+        });
+
+        $("button").click(() => {
+          $(this).html("Changed");
+        });
+
+        $(".join-prime").click(() => {
+          addToast(
+            "joined-prime",
+            "Unlocked Prime",
+            "<b>Thank you for joining the prime membership, Level Up ++</b>",
+            "info"
+          );
+
+          $("#joined-prime").toast("show");
+
+          allCustomers[i].prime = true;
+          sendData("/customers", JSON.stringify(allCustomers, null, 2), false);
+
+          $(".join-prime").text("You are already a Prime Member") &&
+            $(".join-prime").attr("disabled", true);
+        });
 
         const addOrders = (date, product, pin, address, status) => {
           html = `

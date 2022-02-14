@@ -15,6 +15,12 @@
         "type": "Debit Card",
         "bank": "State Bank of India",
         "holderName": "Chan"
+      },
+      {
+        "number": 1234567812345678,
+        "type": "Credit Card",
+        "bank": "State Bank of India",
+        "holderName": "Chanakyha"
       }
     ],
     "orders": [
