@@ -204,6 +204,13 @@ if (document.cookie.includes("userid")) {
             $("#PaymentModal").modal("show");
           });
 
+          $(".btn-close").click(() => {
+            $(".saved-cards-display").html(
+              `<option value="none" selected>Select the Card</option>`
+            );
+            $("#PaymentModal").modal("hide");
+          });
+
           $(document).ready(() => {
             $("button.remove-cart-item").each(function () {
               $(this).click(() => {
