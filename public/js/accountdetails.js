@@ -221,7 +221,7 @@ if (document.cookie.includes("userid")) {
             $(".join-prime").attr("disabled", true);
         });
 
-        const addOrders = (date, product, pin, address, status) => {
+        const addOrders = (id, date, product, pin, address, status) => {
           html = `
           <div class="order-outer-box">
             <div class="order-container">
@@ -238,9 +238,9 @@ if (document.cookie.includes("userid")) {
                 <div class="order-info">
                     <p>Delivery address: </p>
                     <h6>${address}</h6>
-                    <p>Delivery Status: <b>${status}</b></p>
-                    <button type="button" class="btn btn-danger"> Cancel Order</button>
-                    <button type="button" class="btn btn-warning"> Change Address </button>
+                    <p>Delivery Status: <b id="${id}">${status}</b></p>
+                    <button type="button" class="btn btn-danger cancel-order ${id}"> Cancel Order</button>
+                    <button type="button" class="btn btn-warning change-address ${id}"> Change Address </button>
                 </div>
             </div>
           </div>`;
@@ -257,8 +257,43 @@ if (document.cookie.includes("userid")) {
           );
         });
 
+        $(document).ready(() => {
+          $("button.cancel-order").each(function () {
+            for (let x = 0; x < allCustomers[i].orders.length; x++) {
+              if (
+                $(this).attr("class").toString().split(" ").reverse()[0] ==
+                allCustomers[i].orders[x].id.toString()
+              ) {
+                if (allCustomers[i].orders[x].status == "Cancelled") {
+                  $("button.cancel-order." + allCustomers[i].orders[x].id).attr(
+                    "disabled",
+                    true
+                  );
+                }
+                $(this).click(() => {
+                  allCustomers[i].orders[x].status = "Cancelled";
+                  console.log("#" + allCustomers[i].orders[x].id);
+                  $("#" + allCustomers[i].orders[x].id).text("Cancelled");
+                  $("button.cancel-order." + allCustomers[i].orders[x].id).attr(
+                    "disabled",
+                    true
+                  );
+                  sendData(
+                    "/customers",
+                    JSON.stringify(allCustomers, null, 2),
+                    false
+                  );
+                });
+
+                break;
+              }
+            }
+          });
+        });
+
         hisOrders.map((order) => {
           addOrders(
+            order.id,
             order.deliveryDate,
             order.products[0].prouctName,
             order.pin,
