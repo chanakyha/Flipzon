@@ -237,7 +237,7 @@ if (document.cookie.includes("userid")) {
                 </div>
                 <div class="order-info">
                     <p>Delivery address: </p>
-                    <h6>${address}</h6>
+                    <h6 class="delivery-address ${id}">${address}</h6>
                     <p>Delivery Status: <b id="${id}">${status}</b></p>
                     <button type="button" class="btn btn-danger cancel-order ${id}"> Cancel Order</button>
                     <button type="button" class="btn btn-warning change-address ${id}"> Change Address </button>
@@ -278,6 +278,31 @@ if (document.cookie.includes("userid")) {
                     "disabled",
                     true
                   );
+                  sendData(
+                    "/customers",
+                    JSON.stringify(allCustomers, null, 2),
+                    false
+                  );
+                });
+
+                break;
+              }
+            }
+          });
+          $("button.change-address").each(function () {
+            for (let x = 0; x < allCustomers[i].orders.length; x++) {
+              if (
+                $(this).attr("class").toString().split(" ").reverse()[0] ==
+                allCustomers[i].orders[x].id.toString()
+              ) {
+                $(this).click(() => {
+                  let newAddress = prompt("Enter New Delivery address");
+                  newAddress ||
+                    (newAddress = allCustomers[i].orders[x].address);
+                  $(".delivery-address." + allCustomers[i].orders[x].id).text(
+                    newAddress
+                  );
+                  allCustomers[i].orders[x].address = newAddress;
                   sendData(
                     "/customers",
                     JSON.stringify(allCustomers, null, 2),
