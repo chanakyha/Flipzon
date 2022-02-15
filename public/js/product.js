@@ -104,3 +104,10 @@ RecieveData("/mobiles").then((mobileData) => {
     addMobile(mobile.img, mobile.name, mobile.rating, mobile.id, mobile.mrp);
   });
 });
+
+$(".searchbar_container > input").keypress(function (event) {
+  var keycode = event.keyCode ? event.keyCode : event.which;
+  if (keycode == "13") {
+    location.href = "../pages/product.html";
+  }
+});

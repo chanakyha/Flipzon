@@ -3,6 +3,13 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+$(".searchbar_container > input").keypress(function (event) {
+  var keycode = event.keyCode ? event.keyCode : event.which;
+  if (keycode == "13") {
+    location.href = "../pages/product.html";
+  }
+});
+
 let currentCart = [];
 const sendData = (uri, data) => {
   const options = {

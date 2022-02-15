@@ -130,6 +130,13 @@ RecieveData("/customers").then((customers) => {
   }
 });
 
+$(".searchbar_container > input").keypress(function (event) {
+  var keycode = event.keyCode ? event.keyCode : event.which;
+  if (keycode == "13") {
+    location.href = "../pages/product.html";
+  }
+});
+
 $(".add-to-cart").click(() => {
   if (!signedIn) {
     alert("You have to login first");
