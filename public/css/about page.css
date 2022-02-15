@@ -9,6 +9,7 @@
 body {
   color: black;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 /* navbar CSS */
 header a {
