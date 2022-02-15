@@ -57,12 +57,28 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
             <ul class="mobile-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About</a></li>
-                <li id="cart"><a href="#">Cart</a></li>
-                <li id="account"><a href="#">Account</a></li>
-                <li id="signout"><a href="#">Signout</a></li>
+                <!-- search bar li -->
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./pages/product.html">Products</a></li>
+                <li><a href="./pages/about flipzon.html">About</a></li>
+                <li id="cart" class="accountdetails"><button type="button" class="btn btn-success position-relative">
+                        <i class="fas fa-cart-plus"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <span id="cart-items">err</span>
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button></li>
+                <li class="accountdetails" id="account"><a href="./pages/accountdetails.html">Account</a></li>
+                <li class="accountdetails" id="signout"><a href="#">Signout</a></li>
+                <li class="accountdetails" id="avatar"> <a href="#"><img class="avatar" src="./img/img_avatar.png"
+                            width="35rem" alt="avatar"></a>
+                </li>
+                <li class="signinbtn"><a class="btn btn-secondary" href="./pages/login.html">SignIn</a></li>
             </ul>
         </div>
     </header>

@@ -119,7 +119,7 @@ ul li:hover a {
 
 .open .mobile-menu {
   padding-top: 1.5rem !important;
-  background-color: white;
+  background-color: white !important;
   display: flex;
   flex-direction: column;
   align-items: center;
