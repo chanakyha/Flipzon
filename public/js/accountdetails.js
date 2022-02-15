@@ -269,6 +269,9 @@ if (document.cookie.includes("userid")) {
                     "disabled",
                     true
                   );
+                  $(
+                    "button.change-address." + allCustomers[i].orders[x].id
+                  ).attr("disabled", true);
                 }
                 $(this).click(() => {
                   allCustomers[i].orders[x].status = "Cancelled";
@@ -278,6 +281,9 @@ if (document.cookie.includes("userid")) {
                     "disabled",
                     true
                   );
+                  $(
+                    "button.change-address." + allCustomers[i].orders[x].id
+                  ).attr("disabled", true);
                   sendData(
                     "/customers",
                     JSON.stringify(allCustomers, null, 2),
