@@ -61,6 +61,7 @@ const addCust = (
         email: e_email,
         password: e_password,
         cart: [],
+        cards: [],
         orders: [],
         prime: e_prime,
       },
