@@ -3,6 +3,7 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle("open");
 }
 
+let currentCart = [];
 const sendData = (uri, data) => {
   const options = {
     method: "POST",
@@ -102,6 +103,15 @@ if (document.cookie.includes("userid")) {
               }">Remove <i class="fad fa-times-circle"></i></button> </td>
             </tr>`;
             totalPrice += cartDetailsId[i].mrp * cartDetailsId[i].quantity;
+
+            // currentCart = currentCart.concat([{
+            //   id:i + 1,
+            //   productId: cartDetailsId[i].id,
+            //   productName: cartDetailsId[i].name,
+            //   quantity: cartDetailsId[i].quantity,
+            //   price1: cartDetailsId[i].mrp,
+            //   finalProductPrice: cartDetailsId[i].mrp * cartDetailsId[i].quantity
+            // }])
           }
 
           $(".remove-coupon").css("display", "none");
@@ -173,6 +183,68 @@ if (document.cookie.includes("userid")) {
                 );
                 $("#checkout-error").toast("show");
               } else {
+                let afterPayProducts = [];
+                $(".cart-main-table > table tr:gt(0)").each(function () {
+                  var this_row = $(this);
+                  var productId = $.trim(this_row.find("td:eq(1)").html());
+                  var pName = $.trim(this_row.find("td:eq(2)").html());
+                  var qty = $.trim(this_row.find("td:eq(3)").html());
+                  var fProductPrice = $.trim(this_row.find("td:eq(5)").html());
+
+                  afterPayProducts = afterPayProducts.concat([
+                    {
+                      id: productId,
+                      prouctName: pName,
+                      quantity: qty,
+                      img: "",
+                      finalProductPrice: parseFloat(
+                        fProductPrice.slice(1).split(",").join("")
+                      ),
+                    },
+                  ]);
+                });
+
+                let finalProductPriceAfterPay = parseFloat(
+                  $("#final-price-modal").text().slice(1).split(",").join("")
+                );
+                let addressPromt = prompt("Enter the Address");
+                let pin = Math.floor(Math.random() * 9999) + 1111;
+
+                let dDate = allCustomers[i].prime
+                  ? new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+                  : new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000);
+                dDate = dDate.toString().split(" ").slice(0, 4).join(" ");
+                allCustomers[i].orders = allCustomers[i].orders.concat([
+                  {
+                    id: 100001 + allCustomers[i].orders.length,
+                    products: afterPayProducts,
+                    deliveryDate: dDate,
+                    pin: pin,
+                    address: addressPromt,
+                    status: "Ordered",
+                    totalPrice: finalProductPriceAfterPay,
+                  },
+                ]);
+
+                allCustomers[i].cart = [];
+
+                sendData(
+                  "/customers",
+                  JSON.stringify(allCustomers, null, 2),
+                  false
+                );
+
+                $("#PaymentModal").modal("hide");
+                addToast(
+                  "order-place",
+                  "Order Placed",
+                  "Your Order is Places Successfully, Check the details in accounts Page",
+                  "success"
+                );
+                $("#order-place").toast("show");
+
+                location.reload();
+
                 console.log("Checkout Done");
               }
             });
@@ -254,8 +326,6 @@ if (document.cookie.includes("userid")) {
           $(".final-price-1").html(
             toIndianRuppe((5 / 100) * totalPrice + totalPrice)
           );
-
-          console.log(totalPrice);
 
           finalPrice = (5 / 100) * totalPrice + totalPrice;
         }
