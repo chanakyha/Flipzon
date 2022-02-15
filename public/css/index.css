@@ -23,6 +23,9 @@ header {
   justify-content: flex-end;
 }
 
+.carousel {
+  margin-top: -1.5em !important;
+}
 #brand {
   font-weight: bold;
   font-size: 18px;

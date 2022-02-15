@@ -35,17 +35,25 @@ if (document.cookie.includes("userid")) {
   } else {
     cookieUserId = cookies[0];
   }
-
+  window.signedIn = false;
   RecieveData("/customers").then((data) => {
+    $(".sign-in-index").css("display", "none");
+    $(".view-profile").css("display", "none");
     let allCustomers = data;
+    var signedIn = false;
     for (let i = 0; i < allCustomers.length; i++) {
       if (
         allCustomers[i].id.toString() === cookieUserId.replace("userid=", "")
       ) {
+        $(".view-profile").css("display", "inline");
+        signedIn = true;
         document.getElementById("cart-items").innerText =
           allCustomers[i].cart.length;
+        break;
       }
     }
+
+    !signedIn && $(".sign-in-index").css("display", "inline");
   });
 } else {
   $(".accountdetails").css("display", "none");
