@@ -82,6 +82,4 @@ Live Preview of the Site: https://flipzon-project.herokuapp.com/
 | 3    | Rashwanth        | ["Home Page","Payment Method"]       |
 | 4    | Jyothi Sai Kiran | ["Each Mobile Page","About Us"]      |
 
-# **Note:** All Integrate the json files using JQuery, which is very simple to load or write Json Files
 
-**Note:** All Integrate the json files using JQuery, which is very simple to load or write Json Files
